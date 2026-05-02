@@ -1,3 +1,22 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-dashboard",
+      "description": "Premium SaaS Dashboard Illustration",
+      "imageUrl": "https://picsum.photos/seed/forge1/1200/800",
+      "imageHint": "saas dashboard"
+    },
+    {
+      "id": "feature-automation",
+      "description": "Workflow Automation Visualization",
+      "imageUrl": "https://picsum.photos/seed/forge2/600/400",
+      "imageHint": "automation workflow"
+    },
+    {
+      "id": "feature-analytics",
+      "description": "Real-time Data Analytics",
+      "imageUrl": "https://picsum.photos/seed/forge3/600/400",
+      "imageHint": "data analytics"
+    }
+  ]
 }
