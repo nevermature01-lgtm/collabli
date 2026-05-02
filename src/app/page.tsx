@@ -16,6 +16,15 @@ export default function Home() {
         isVisible={global.showAnnouncementBar}
       />
       
+      {/* Independent Floating Logo */}
+      <div className="fixed top-4 left-4 md:top-5 md:left-10 z-[1000] pointer-events-none">
+        <img
+          src="/logo.png"
+          alt="Collabli Logo"
+          className="h-8 md:h-9 w-auto object-contain select-none"
+        />
+      </div>
+
       <FloatingNavbar />
       
       <HeroSection 
