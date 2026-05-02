@@ -26,11 +26,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     >
       <div className="container mx-auto px-4 md:px-10 relative z-10 pointer-events-none">
         <div className="max-w-[650px] pointer-events-auto">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tighter mb-4 uppercase">
-            INFLUENCER MARKETPLACE
-          </h1>
-
           {/* Sub-content block */}
           <div className="mt-6 max-w-[520px]">
             <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
