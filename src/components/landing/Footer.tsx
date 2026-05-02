@@ -39,8 +39,8 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-[1200px] mx-auto w-full flex-grow flex flex-col justify-between relative z-10">
         
-        {/* TOP SECTION: HEADER + SOCIAL */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+        {/* TOP SECTION: HEADER + SOCIAL HORIZONTAL */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
           <div className="max-w-[520px]">
             <h2 className="text-[28px] md:text-[32px] font-bold text-white leading-[1.15] tracking-[-0.5px] mb-3">
               Build Powerful <br /> Influencer Campaigns
@@ -50,25 +50,27 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Social Links vertically aligned top right */}
+          {/* Social Links horizontally aligned top right */}
           <div className="flex flex-col items-start lg:items-end">
-            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Social</h3>
-            <ul className="space-y-2.5">
+            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px] lg:text-right">Follow Us</h3>
+            <div className="flex items-center gap-3">
               {footerLinks.social.map(link => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[11px] font-medium flex items-center gap-2.5 group">
-                    <div className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
-                      <link.icon className="w-2.5 h-2.5" />
-                    </div>
-                    {link.name}
-                  </a>
-                </li>
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="group"
+                  aria-label={link.name}
+                >
+                  <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
+                    <link.icon className="w-3 h-3" />
+                  </div>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        {/* MIDDLE SECTION: LINKS GRID (Social removed) */}
+        {/* MIDDLE SECTION: LINKS GRID */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-[36px] mt-[36px] lg:mt-0">
           <div>
             <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Product</h3>
