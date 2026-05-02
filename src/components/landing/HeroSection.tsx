@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -20,11 +19,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   subtitle,
   primaryCTA,
   secondaryCTA,
-  imageKey,
   hasAnnouncement,
 }) => {
-  const image = PlaceHolderImages.find(img => img.id === imageKey);
-
   return (
     <section className={cn(
       "relative py-12 md:py-16 overflow-hidden",
@@ -55,26 +51,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               )}
             </div>
           </div>
-          <div className="relative animate-in fade-in zoom-in-95 duration-700 delay-200">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-primary/5 to-secondary/5 p-2 group">
-              {image && (
+          <div className="relative mt-8 lg:mt-0 animate-in fade-in zoom-in-95 duration-700 delay-200 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[600px] rounded-2xl overflow-hidden shadow-soft border border-white/20 bg-white/50 p-2 group transition-all duration-500 hover:shadow-premium">
+              <div className="animate-float">
                 <Image
-                  src={image.imageUrl}
-                  alt={image.description}
+                  src="/desktop-version.png"
+                  alt="Premium SaaS Desktop View"
                   width={1200}
                   height={800}
-                  className="rounded-xl object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-[1.02]"
-                  data-ai-hint={image.imageHint}
+                  priority
+                  className="rounded-xl object-contain w-full h-auto transform transition-transform duration-1000 group-hover:scale-[1.01]"
                 />
-              )}
+              </div>
+              {/* Fallback pattern to maintain height during load/failure */}
+              <div className="absolute inset-0 -z-10 bg-muted/10 rounded-xl" />
+              
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 blur-3xl rounded-full" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/10 blur-3xl rounded-full" />
-            </div>
-            {/* Soft floating effect wrapper */}
-            <div className="absolute inset-0 pointer-events-none animate-float opacity-30">
-               <div className="absolute top-1/4 -left-8 w-16 h-16 bg-primary blur-2xl rounded-full" />
-               <div className="absolute bottom-1/4 -right-8 w-20 h-20 bg-secondary blur-2xl rounded-full" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/5 blur-3xl rounded-full" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/5 blur-3xl rounded-full" />
             </div>
           </div>
         </div>

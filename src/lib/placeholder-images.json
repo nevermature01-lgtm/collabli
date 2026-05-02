@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "hero-dashboard",
-      "description": "Premium SaaS Dashboard Illustration",
-      "imageUrl": "https://picsum.photos/seed/forge1/1200/800",
+      "description": "Premium SaaS Desktop View",
+      "imageUrl": "/desktop-version.png",
       "imageHint": "saas dashboard"
     },
     {
