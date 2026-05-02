@@ -143,10 +143,6 @@ export const FeatureShowcase: React.FC = () => {
 
         {/* Creator Slider Section */}
         <div className="mt-12 w-full relative group">
-          {/* Fading Edge Gradients */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
-          
           {/* Slider Container */}
           <div 
             ref={sliderRef}
