@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="w-full px-4 md:px-10 relative z-10 pointer-events-none">
         {/* Top Text - Independent and aligned left */}
         <div className="max-w-[800px] pointer-events-auto">
-          <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 max-w-[500px]">
+          <p className="text-xs md:text-sm text-gray-600 leading-relaxed mt-2 mb-4 max-w-[500px]">
             The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
           </p>
         </div>
