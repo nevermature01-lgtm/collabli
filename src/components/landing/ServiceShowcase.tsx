@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -8,7 +9,6 @@ import { cn } from '@/lib/utils';
 
 export const ServiceShowcase: React.FC = () => {
   const [activeId, setActiveId] = useState(1);
-  const dashboardImg = PlaceHolderImages.find(img => img.id === 'dashboard-preview');
 
   const features = [
     {
@@ -18,6 +18,7 @@ export const ServiceShowcase: React.FC = () => {
       icon: Zap,
       accent: "bg-blue-600",
       light: "bg-blue-50 text-blue-600",
+      imageId: "service-influencers"
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export const ServiceShowcase: React.FC = () => {
       icon: BarChart3,
       accent: "bg-emerald-600",
       light: "bg-emerald-50 text-emerald-600",
+      imageId: "service-monitor"
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ export const ServiceShowcase: React.FC = () => {
       icon: PenTool,
       accent: "bg-purple-600",
       light: "bg-purple-50 text-purple-600",
+      imageId: "service-content"
     },
     {
       id: 4,
@@ -42,8 +45,13 @@ export const ServiceShowcase: React.FC = () => {
       icon: MessageCircle,
       accent: "bg-orange-600",
       light: "bg-orange-50 text-orange-600",
+      imageId: "service-engagement"
     }
   ];
+
+  // Find the image object based on the currently active feature's imageId
+  const activeFeature = features.find(f => f.id === activeId);
+  const activeImg = PlaceHolderImages.find(img => img.id === activeFeature?.imageId);
 
   return (
     <section className="py-8 px-4 bg-[#f4e7b5] overflow-hidden">
@@ -125,17 +133,18 @@ export const ServiceShowcase: React.FC = () => {
             </div>
 
             {/* RIGHT: Sophisticated Dashboard Visual */}
-            <div className="relative group w-full animate-in fade-in slide-in-from-right-8 duration-1000">
+            <div className="relative group w-full">
               <div className="absolute -inset-2 bg-white/20 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
               
               <div className="relative aspect-[16/10] w-full bg-white/40 rounded-xl overflow-hidden shadow-[0_15px_30px_-8px_rgba(0,0,0,0.1)] border border-white/40 z-10 backdrop-blur-md">
-                {dashboardImg && (
+                {activeImg && (
                   <Image 
-                    src={dashboardImg.imageUrl}
-                    alt="Influencer Dashboard"
+                    key={activeImg.id} // Key ensures React replaces the element for transition
+                    src={activeImg.imageUrl}
+                    alt={activeImg.description}
                     fill
-                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105 opacity-90"
-                    data-ai-hint="dashboard screen"
+                    className="object-cover transition-all duration-700 animate-in fade-in zoom-in-95"
+                    data-ai-hint={activeImg.imageHint}
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
