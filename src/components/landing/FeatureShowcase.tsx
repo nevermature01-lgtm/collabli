@@ -66,7 +66,7 @@ export const FeatureShowcase: React.FC = () => {
                 className={cn(
                   "px-4 md:px-6 py-2.5 rounded-full text-[13px] md:text-[14px] transition-all duration-300",
                   activeTab === tab 
-                    ? "bg-white text-black shadow-[0_2px_8px_rgba(0,0,0,0.08)] font-semibold" 
+                    ? "bg-white text-black shadow-[0_2px_12px_rgba(0,0,0,0.06)] font-semibold" 
                     : "text-[#444] hover:bg-white/40 hover:text-black"
                 )}
               >
@@ -78,40 +78,46 @@ export const FeatureShowcase: React.FC = () => {
 
         {/* Creator Cards Marketplace Section */}
         <div className="mt-8 max-w-[1100px] mx-auto overflow-hidden animate-in fade-in zoom-in duration-700 py-4">
-          <div className="flex gap-5 overflow-hidden justify-center flex-wrap md:flex-nowrap">
+          <div className="flex gap-6 overflow-hidden justify-center flex-wrap md:flex-nowrap">
             {creators.map((creator, i) => (
               <div 
                 key={i} 
-                className="w-[240px] shrink-0 rounded-xl overflow-hidden bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="w-[240px] shrink-0 rounded-2xl overflow-hidden bg-white border border-black/[0.03] shadow-[0_12px_35px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer group"
               >
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <Image 
                     src={creator.image} 
                     alt={creator.name} 
                     width={240} 
                     height={260} 
-                    className="h-[260px] w-full object-cover" 
+                    className="h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-105" 
                     data-ai-hint="portrait person"
                   />
-                  <div className="absolute top-2 left-2 flex gap-2">
-                    <span className="bg-black/70 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">
-                      Top Creator
+                  <div className="absolute top-3 left-3 flex gap-1.5">
+                    <span className="bg-black/60 text-white text-[9px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full backdrop-blur-md">
+                      Verified
                     </span>
-                    <span className="bg-green-500 text-white text-[10px] px-2 py-1 rounded-full">
-                      Fast
+                    <span className="bg-[#0ab99d] text-white text-[9px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-lg">
+                      Rising
                     </span>
                   </div>
                 </div>
-                <div className="p-3 text-left">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-gray-900">{creator.name}</p>
-                    <p className="text-sm font-bold text-gray-900">{creator.price}</p>
+                <div className="p-4 text-left">
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-[15px] font-bold text-gray-900 tracking-tight">{creator.name}</p>
+                    <p className="text-[14px] font-black text-gray-900">{creator.price}</p>
                   </div>
-                  <p className="text-[11px] text-gray-500 mt-0.5">
+                  <p className="text-[11px] font-medium text-gray-400 uppercase tracking-widest mb-3">
                     {creator.category}
                   </p>
-                  <div className="flex items-center gap-1 text-[11px] text-amber-500 mt-1 font-medium">
-                    ⭐ {creator.rating}
+                  <div className="flex items-center gap-1.5 pt-3 border-t border-gray-50">
+                    <div className="flex text-amber-400 text-[10px]">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i}>★</span>
+                      ))}
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-700">{creator.rating}</span>
+                    <span className="text-[10px] text-gray-400 ml-auto font-medium italic">48 Deals</span>
                   </div>
                 </div>
               </div>
