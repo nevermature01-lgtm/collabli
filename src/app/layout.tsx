@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Collabli | Premium Modular Landing Page',
+  title: 'Collabli | Influencer Marketplace',
   description: 'A modern, premium SaaS landing page built with modular architecture.',
 };
 

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Collabli',
+  name: 'Collabli | Influencer Marketplace',
   global: {
     showAnnouncementBar: true,
   },
