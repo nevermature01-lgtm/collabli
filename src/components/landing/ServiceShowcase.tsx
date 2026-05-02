@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Bot, BarChart3, PenTool, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { Bot, BarChart3, PenTool, MessageCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -40,7 +40,7 @@ export const ServiceShowcase: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-4 bg-white overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-[28px] md:text-[32px] font-semibold text-center max-w-3xl mx-auto mb-10 text-[#222] leading-tight">
+        <h2 className="text-[24px] md:text-[28px] font-semibold text-center max-w-3xl mx-auto mb-10 text-[#222] leading-tight">
           All Your Influencer and Social Media Needs Covered in One Intuitive Hub
         </h2>
 
@@ -67,7 +67,7 @@ export const ServiceShowcase: React.FC = () => {
                   </div>
                   <div className="flex flex-col justify-center">
                     <h4 className={cn(
-                      "text-[15px] font-semibold",
+                      "text-[14px] font-semibold",
                       feature.active ? "text-gray-900" : "text-gray-600"
                     )}>
                       {feature.title}
@@ -126,11 +126,6 @@ export const ServiceShowcase: React.FC = () => {
                     <div className="w-10 h-1 bg-gray-100 rounded-full" />
                   </div>
                </div>
-            </div>
-
-            {/* Floating Social Icons */}
-            <div className="absolute top-1/2 -right-6 bg-white p-2 rounded-full shadow-md border border-gray-50 text-pink-500 animate-bounce duration-[3000ms]">
-              <Instagram className="w-4 h-4" />
             </div>
           </div>
         </div>
