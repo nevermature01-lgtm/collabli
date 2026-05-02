@@ -117,16 +117,15 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Cards Marketplace Section - Infinite Auto Scroll */}
-        <div className="mt-12 w-full overflow-hidden animate-in fade-in zoom-in duration-700 py-12 relative group">
+        {/* Creator Cards Marketplace Section - Manual Scroll */}
+        <div className="mt-12 w-full relative group">
           {/* Fading Edge Gradients for Premium Feel */}
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
           
-          <div className="flex w-max animate-scroll hover:[animation-play-state:paused] transition-all duration-500">
-            <div className="flex gap-8 px-4 overflow-visible" style={{ perspective: '1200px' }}>
-              {/* Double the array for seamless infinite scroll */}
-              {[...creators, ...creators].map((creator, i) => (
+          <div className="overflow-x-auto no-scrollbar py-12 px-4 md:px-20 cursor-grab active:cursor-grabbing">
+            <div className="flex gap-8 w-max overflow-visible" style={{ perspective: '1200px' }}>
+              {creators.map((creator, i) => (
                 <CreatorCard key={i} creator={creator} />
               ))}
             </div>
