@@ -16,8 +16,8 @@ export const BannerSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden">
-      <div className="container mx-auto px-4 max-w-[1200px]">
+    <section className="min-h-[40vh] py-12 md:py-16 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
+      <div className="container mx-auto px-4 max-w-[1200px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
           {/* LEFT: VISUAL STACK */}
@@ -42,7 +42,7 @@ export const BannerSection: React.FC = () => {
               </div>
             </div>
 
-            {/* CARD 2: FOREGROUND GRADIENT CARD */}
+            {/* CARD 2: FOREGROUND CARD */}
             <div className="absolute left-20 top-0 w-[260px] h-[340px] bg-gradient-to-br from-[#ff4d6d] to-[#ff758f] rounded-[32px] shadow-[0_40px_100px_rgba(255,77,109,0.3)] z-10 p-6 flex flex-col justify-between animate-float hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 cursor-default group">
               <div className="flex justify-between items-start">
                 <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
