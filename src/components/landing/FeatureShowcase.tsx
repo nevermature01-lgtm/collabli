@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const FeatureShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Instagram');
+  const sliderRef = useRef<HTMLDivElement>(null);
+  
+  // Drag to scroll state
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const tabs = [
     'Instagram',
@@ -87,6 +94,34 @@ export const FeatureShowcase: React.FC = () => {
     }
   ];
 
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const scrollAmount = 400;
+      sliderRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!sliderRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !sliderRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    sliderRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   return (
     <section className="bg-[#f5f2eb] py-16 md:py-24 px-4 text-center overflow-hidden">
       <div className="container mx-auto w-full">
@@ -97,7 +132,7 @@ export const FeatureShowcase: React.FC = () => {
           Everything your creator program needs, from first search to final report.
         </p>
 
-        {/* Tabs Bar - Horizontal */}
+        {/* Tabs Bar */}
         <div className="mt-6 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
@@ -117,16 +152,47 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Cards Marketplace Section - Manual Scroll */}
+        {/* Creator Slider Section */}
         <div className="mt-12 w-full relative group">
-          {/* Fading Edge Gradients for Premium Feel */}
+          {/* Navigation Buttons */}
+          <button 
+            onClick={() => handleScroll('left')}
+            className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-white transition-all hover:scale-110 active:scale-95 border border-white/50 opacity-0 group-hover:opacity-100 hidden md:flex"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button 
+            onClick={() => handleScroll('right')}
+            className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-white transition-all hover:scale-110 active:scale-95 border border-white/50 opacity-0 group-hover:opacity-100 hidden md:flex"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Fading Edge Gradients */}
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
           
-          <div className="overflow-x-auto no-scrollbar py-12 px-4 md:px-20 cursor-grab active:cursor-grabbing">
+          {/* Slider Container */}
+          <div 
+            ref={sliderRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className={cn(
+              "overflow-x-auto no-scrollbar py-12 px-4 md:px-20 cursor-grab active:cursor-grabbing select-none",
+              isDragging && "cursor-grabbing"
+            )}
+            style={{ scrollSnapType: 'x mandatory' }}
+          >
             <div className="flex gap-8 w-max overflow-visible" style={{ perspective: '1200px' }}>
               {creators.map((creator, i) => (
-                <CreatorCard key={i} creator={creator} />
+                <div key={i} className="scroll-snap-align-start shrink-0">
+                  <CreatorCard creator={creator} />
+                </div>
               ))}
             </div>
           </div>
@@ -136,7 +202,6 @@ export const FeatureShowcase: React.FC = () => {
   );
 };
 
-// Helper component for 3D card logic with interactive tilt
 const CreatorCard = ({ creator }: { creator: any }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -148,7 +213,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    // Calculate rotation degree based on mouse position relative to center
     const degX = (y - centerY) / 12;
     const degY = (centerX - x) / 12;
     
@@ -174,12 +238,11 @@ const CreatorCard = ({ creator }: { creator: any }) => {
     >
       <div 
         className={cn(
-          "group relative w-[240px] rounded-2xl bg-white/75 backdrop-blur-xl border border-white/50 shadow-[0_20px_60px_rgba(0,0,0,0.08),0_8px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-300 cursor-pointer overflow-visible",
+          "group relative w-[260px] rounded-2xl bg-white/75 backdrop-blur-xl border border-white/50 shadow-[0_20px_60px_rgba(0,0,0,0.08),0_8px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-300 cursor-pointer overflow-visible",
           isHovering && "shadow-[0_40px_100px_rgba(0,0,0,0.15),0_20px_40px_rgba(0,0,0,0.08)]"
         )}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Light reflection overlay - Premium Light Effect */}
         <div 
           className={cn(
             "absolute inset-0 rounded-2xl pointer-events-none z-30 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-white/40 via-transparent to-transparent",
@@ -188,14 +251,13 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           style={{ transform: 'translateZ(60px)' }}
         />
         
-        {/* Image Layer with Depth */}
         <div className="relative overflow-hidden rounded-t-2xl" style={{ transform: 'translateZ(30px)' }}>
           <Image 
             src={creator.image} 
             alt={creator.name} 
-            width={240} 
-            height={260} 
-            className="h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-110" 
+            width={260} 
+            height={280} 
+            className="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none" 
             data-ai-hint="portrait person"
           />
           <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
@@ -208,7 +270,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           </div>
         </div>
         
-        {/* Content Layer with Depth */}
         <div className="p-4 text-left relative z-10" style={{ transform: 'translateZ(50px)' }}>
           <div className="flex items-center justify-between mb-0.5">
             <p className="text-[15px] font-bold text-gray-900 tracking-tight">{creator.name}</p>
