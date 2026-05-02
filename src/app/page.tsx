@@ -16,12 +16,12 @@ export default function Home() {
         isVisible={global.showAnnouncementBar}
       />
       
-      {/* Independent Floating Logo */}
-      <div className="fixed top-4 left-4 md:top-5 md:left-10 z-[1000] pointer-events-none">
+      {/* Independent Floating Logo aligned with Navbar top position */}
+      <div className="fixed top-10 left-4 md:left-10 z-[1000] pointer-events-none flex items-center h-[42px]">
         <img
           src="/logo.png"
           alt="Collabli Logo"
-          className="h-8 md:h-12 lg:h-14 w-auto object-contain select-none"
+          className="h-8 md:h-10 lg:h-12 w-auto object-contain select-none"
         />
       </div>
 
