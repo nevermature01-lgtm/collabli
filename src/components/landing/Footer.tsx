@@ -50,18 +50,6 @@ export const Footer: React.FC = () => {
               The all-in-one platform connecting world-class brands with verified creators to build powerful partnerships.
             </p>
           </div>
-
-          <div className="relative group">
-            {/* Subtle radial glow behind CTA */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] pointer-events-none opacity-40 blur-3xl bg-[radial-gradient(circle_at_center,rgba(10,185,157,0.15),transparent_70%)]" />
-            
-            <button className="relative bg-[#0ab99d] hover:bg-[#09a68d] text-white px-[24px] py-[12px] rounded-full font-bold transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.02] shadow-[0_12px_40px_rgba(10,185,157,0.35)] flex items-center group overflow-hidden text-sm">
-              <span className="relative z-10 flex items-center">
-                Get Started Now
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </button>
-          </div>
         </div>
 
         {/* MIDDLE SECTION: LINKS GRID */}
