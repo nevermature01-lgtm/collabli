@@ -19,7 +19,7 @@ export const FeatureShowcase: React.FC = () => {
   const dashboardImg = PlaceHolderImages.find(img => img.id === 'dashboard-preview');
 
   return (
-    <section className="bg-[#f5f2eb] min-h-screen py-20 px-4 text-center overflow-hidden flex items-center justify-center">
+    <section className="bg-[#f5f2eb] py-16 md:py-24 px-4 text-center overflow-hidden">
       <div className="container mx-auto w-full">
         <h2 className="text-[32px] md:text-[42px] font-semibold text-[#222] leading-tight max-w-2xl mx-auto">
           The all-in-one creator platform
