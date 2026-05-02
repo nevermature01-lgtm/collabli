@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -55,14 +56,14 @@ export const ServiceShowcase: React.FC = () => {
     <section className="py-8 px-4 bg-[#f4e7b5] overflow-hidden">
       <div className="max-w-6xl mx-auto rounded-3xl bg-white/30 backdrop-blur-2xl border border-white/20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all duration-500 hover:-translate-y-1 p-4 md:p-6">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center max-w-2xl mx-auto mb-4 space-y-1 animate-in fade-in slide-in-from-bottom-2 duration-700">
-            <span className="inline-block px-2 py-0.5 bg-black/10 text-black/60 text-[8px] font-bold tracking-[1.5px] uppercase rounded-full">
+          <div className="text-center max-w-2xl mx-auto mb-6 space-y-2 animate-in fade-in slide-in-from-bottom-2 duration-700">
+            <span className="inline-block px-3 py-1 bg-black/10 text-black/60 text-[10px] md:text-xs font-bold tracking-[1.5px] uppercase rounded-full">
               The Hub for Excellence
             </span>
-            <h2 className="text-lg md:text-xl font-bold text-[#111] leading-tight tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#111] leading-tight tracking-tight">
               All-in-one Influencer & Social Media Hub
             </h2>
-            <p className="text-[#111]/60 text-[9px] md:text-[10px] max-w-lg mx-auto">
+            <p className="text-[#111]/70 text-sm md:text-base max-w-xl mx-auto">
               Scale your creator ecosystem effortlessly with the industry's most intuitive platform.
             </p>
           </div>
