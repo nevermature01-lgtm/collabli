@@ -26,18 +26,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       aria-label="SaaS Product Showcase"
     >
       <div className="w-full px-4 md:px-10 relative z-10 pointer-events-none">
+        {/* Top Text - Independent and aligned left */}
         <div className="max-w-[800px] pointer-events-auto">
-          {/* Paragraph - now independent */}
           <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 max-w-[500px]">
             The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
           </p>
+        </div>
 
-          {/* Button - shifted slightly right from center */}
-          <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-md hover:scale-105 active:scale-95 transition-all duration-200 mb-6 block mx-auto translate-x-12">
+        {/* Centered Button Container - Aligned with Viewport Center (Navbar) */}
+        <div className="w-full flex justify-center mb-6 pointer-events-auto">
+          <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-md hover:scale-105 active:scale-95 transition-all duration-200 block">
             FIND THE RIGHT MATCH →
           </button>
+        </div>
 
-          {/* Stats section - now independent */}
+        {/* Stats section - Independent and aligned left */}
+        <div className="max-w-[800px] pointer-events-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 mt-2">
             {/* Stat 1 */}
             <div className="flex items-center gap-2">
