@@ -158,14 +158,12 @@ export const Footer: React.FC = () => {
         }
 
         .arrow-wrapper {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          display: inline-block !important; /* CRITICAL FOR TRANSFORM */
           transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .arrow {
-          display: inline-block !important; /* CRITICAL FOR TRANSFORM */
+          display: inline-block !important;
           color: rgba(0,0,0,0.35);
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -173,7 +171,7 @@ export const Footer: React.FC = () => {
         /* HOVER INTERACTIONS */
         .footer-link:hover {
           color: #000 !important;
-          border-bottom-color: rgba(250, 204, 21, 0.4) !important;
+          border-bottom-color: rgba(156, 123, 26, 0.4) !important;
           background: rgba(0, 0, 0, 0.01); /* Safety highlight */
         }
 
@@ -183,11 +181,11 @@ export const Footer: React.FC = () => {
 
         .footer-link:hover .arrow-wrapper {
           transform: translateX(10px) rotate(-45deg) !important; /* GLIDE + DIAGONAL UP (↗) */
-          filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
+          filter: drop-shadow(0 0 6px rgba(156, 123, 26, 0.5));
         }
 
         .footer-link:hover .arrow {
-          color: #facc15 !important; /* CTA YELLOW */
+          color: #9c7b1a !important; /* GOLDEN BROWN */
         }
 
         .footer-link:active .arrow-wrapper {
