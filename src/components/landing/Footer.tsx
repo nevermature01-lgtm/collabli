@@ -95,8 +95,8 @@ export const Footer: React.FC = () => {
               {footerLinks.social.map(link => (
                 <li key={link.name}>
                   <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[11px] font-medium flex items-center gap-2.5 group">
-                    <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
-                      <link.icon className="w-3 h-3" />
+                    <div className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
+                      <link.icon className="w-2.5 h-2.5" />
                     </div>
                     {link.name}
                   </a>
