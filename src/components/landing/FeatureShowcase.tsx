@@ -25,71 +25,71 @@ export const FeatureShowcase: React.FC = () => {
       name: "Riya Sharma",
       category: "Lifestyle • Fitness • Travel",
       price: "₹2,500",
-      rating: "4.9",
-      image: "https://picsum.photos/seed/riya/240/260"
+      image: "https://picsum.photos/seed/riya/240/260",
+      isTop: true
     },
     {
       name: "Arjun Mehta",
       category: "Tech • Gaming • Business",
       price: "₹4,500",
-      rating: "4.8",
-      image: "https://picsum.photos/seed/arjun/240/260"
+      image: "https://picsum.photos/seed/arjun/240/260",
+      isTop: false
     },
     {
       name: "Neha Verma",
       category: "Fashion • Beauty • Travel",
       price: "₹3,200",
-      rating: "4.9",
-      image: "https://picsum.photos/seed/neha/240/260"
+      image: "https://picsum.photos/seed/neha/240/260",
+      isTop: true
     },
     {
       name: "Karan Singh",
       category: "Food • Travel • Lifestyle",
       price: "₹2,800",
-      rating: "4.7",
-      image: "https://picsum.photos/seed/karan/240/260"
+      image: "https://picsum.photos/seed/karan/240/260",
+      isTop: false
     },
     {
       name: "Pooja Patel",
       category: "Lifestyle • Beauty",
       price: "₹3,000",
-      rating: "4.9",
-      image: "https://picsum.photos/seed/pooja/240/260"
+      image: "https://picsum.photos/seed/pooja/240/260",
+      isTop: true
     },
     {
       name: "Vikram Rao",
       category: "Tech • Business",
       price: "₹5,000",
-      rating: "4.8",
-      image: "https://picsum.photos/seed/vikram/240/260"
+      image: "https://picsum.photos/seed/vikram/240/260",
+      isTop: true
     },
     {
       name: "Simran Kaur",
       category: "Fashion • Fitness",
       price: "₹3,500",
-      rating: "4.9",
-      image: "https://picsum.photos/seed/simran/240/260"
+      image: "https://picsum.photos/seed/simran/240/260",
+      isTop: false
     },
     {
       name: "Rahul Gupta",
       category: "Food • Travel",
       price: "₹2,600",
-      rating: "4.6",
-      image: "https://picsum.photos/seed/rahul/240/260"
+      image: "https://picsum.photos/seed/rahul/240/260",
+      isTop: false
     },
     {
       name: "Ananya Iyer",
       category: "Art • Photography",
       price: "₹4,000",
-      rating: "4.9",
-      image: "https://picsum.photos/seed/ananya/240/260"
+      image: "https://picsum.photos/seed/ananya/240/260",
+      isTop: true
     },
     {
       name: "Sameer Khan",
       category: "Gaming • Entertainment",
       price: "₹3,800",
-      rating: "4.7",
-      image: "https://picsum.photos/seed/sameer/240/260"
+      image: "https://picsum.photos/seed/sameer/240/260",
+      isTop: false
     }
   ];
 
@@ -112,12 +112,12 @@ export const FeatureShowcase: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f2eb] py-16 md:py-24 px-4 text-center overflow-hidden">
+    <section className="bg-[#f5f2eb] py-12 md:py-16 px-4 text-center overflow-hidden">
       <div className="container mx-auto w-full">
         <h2 className="text-[32px] md:text-[42px] font-semibold text-[#222] leading-tight max-w-2xl mx-auto">
           The all-in-one creator platform
         </h2>
-        <p className="text-sm md:text-base text-[#777] mt-[10px] max-w-xl mx-auto">
+        <p className="text-sm md:text-base text-[#777] mt-[6px] max-w-xl mx-auto">
           Everything your creator program needs, from first search to final report.
         </p>
 
@@ -142,7 +142,7 @@ export const FeatureShowcase: React.FC = () => {
         </div>
 
         {/* Creator Slider Section */}
-        <div className="mt-6 w-full relative group">
+        <div className="mt-4 w-full relative group">
           <div 
             ref={sliderRef}
             onMouseDown={handleMouseDown}
@@ -150,7 +150,7 @@ export const FeatureShowcase: React.FC = () => {
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
             className={cn(
-              "overflow-x-auto no-scrollbar py-8 px-4 md:px-20 cursor-grab active:cursor-grabbing select-none",
+              "overflow-x-auto no-scrollbar py-6 px-4 md:px-20 cursor-grab active:cursor-grabbing select-none",
               isDragging && "cursor-grabbing"
             )}
             style={{ scrollSnapType: 'x mandatory' }}
@@ -231,9 +231,11 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           />
           {/* Top Badges */}
           <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
-            <span className="bg-black/60 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full backdrop-blur-md border border-white/10">
-              Verified
-            </span>
+            {creator.isTop && (
+              <span className="bg-black/60 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full backdrop-blur-md border border-white/10">
+                Top Creator
+              </span>
+            )}
             <span className="bg-gradient-to-br from-[#00c6a7] to-[#00e0b8] text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-lg border border-white/10">
               Rising
             </span>
