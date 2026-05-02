@@ -171,6 +171,7 @@ export const FeatureShowcase: React.FC = () => {
 const CreatorCard = ({ creator }: { creator: any }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const imageData = PlaceHolderImages.find(img => img.id === creator.imageId);
 
@@ -192,6 +193,8 @@ const CreatorCard = ({ creator }: { creator: any }) => {
     setIsHovering(false);
     setRotate({ x: 0, y: 0 });
   };
+
+  const fallbackUrl = 'https://picsum.photos/seed/indian-influencer-fallback/600/800';
 
   return (
     <div 
@@ -220,12 +223,13 @@ const CreatorCard = ({ creator }: { creator: any }) => {
         <div className="relative overflow-hidden rounded-t-2xl" style={{ transform: 'translateZ(30px)' }}>
           {imageData && (
             <Image 
-              src={imageData.imageUrl} 
+              src={imgError ? fallbackUrl : imageData.imageUrl} 
               alt={creator.name} 
               width={260} 
               height={280} 
               className="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none" 
               data-ai-hint={imageData.imageHint}
+              onError={() => setImgError(true)}
             />
           )}
           <div className="absolute top-3 left-3 flex flex-col gap-2" style={{ transform: 'translateZ(45px)' }}>

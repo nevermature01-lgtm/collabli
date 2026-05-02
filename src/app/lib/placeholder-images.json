@@ -1,0 +1,119 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-dashboard",
+      "description": "Premium SaaS Desktop View",
+      "imageUrl": "/desktop-version.png",
+      "imageHint": "saas dashboard"
+    },
+    {
+      "id": "dashboard-preview",
+      "description": "Creator Platform Dashboard Mockup",
+      "imageUrl": "https://picsum.photos/seed/dashboard-preview/1200/800",
+      "imageHint": "dashboard ui"
+    },
+    {
+      "id": "service-influencers",
+      "description": "Influencer Matching Dashboard",
+      "imageUrl": "/service_img_1.png",
+      "imageHint": "influencer data"
+    },
+    {
+      "id": "service-monitor",
+      "description": "Brand Performance Monitoring",
+      "imageUrl": "/service_img_2.png",
+      "imageHint": "analytics chart"
+    },
+    {
+      "id": "service-content",
+      "description": "Content Insight Dashboard",
+      "imageUrl": "/service_img_3.png",
+      "imageHint": "social media content"
+    },
+    {
+      "id": "service-engagement",
+      "description": "Consumer Engagement Panel",
+      "imageUrl": "/servive_img_4.png",
+      "imageHint": "chat dashboard"
+    },
+    {
+      "id": "creator-1",
+      "description": "Indian Influencer Riya - Lifestyle & Fitness",
+      "imageUrl": "https://picsum.photos/seed/indian-girl-101/600/800",
+      "imageHint": "indian girl"
+    },
+    {
+      "id": "creator-2",
+      "description": "Indian Influencer Arjun - Tech & Gaming",
+      "imageUrl": "https://picsum.photos/seed/indian-guy-202/600/800",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "creator-3",
+      "description": "Indian Influencer Neha - Fashion & Beauty",
+      "imageUrl": "https://picsum.photos/seed/indian-girl-303/600/800",
+      "imageHint": "indian girl"
+    },
+    {
+      "id": "creator-4",
+      "description": "Indian Influencer Karan - Food & Travel",
+      "imageUrl": "https://picsum.photos/seed/indian-guy-404/600/800",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "creator-5",
+      "description": "Indian Influencer Pooja - Lifestyle & Beauty",
+      "imageUrl": "https://picsum.photos/seed/indian-girl-505/600/800",
+      "imageHint": "indian girl"
+    },
+    {
+      "id": "creator-6",
+      "description": "Indian Influencer Vikram - Tech & Business",
+      "imageUrl": "https://picsum.photos/seed/indian-guy-606/600/800",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "creator-7",
+      "description": "Indian Influencer Simran - Fashion & Fitness",
+      "imageUrl": "https://picsum.photos/seed/indian-girl-707/600/800",
+      "imageHint": "indian girl"
+    },
+    {
+      "id": "creator-8",
+      "description": "Indian Influencer Rahul - Food & Travel",
+      "imageUrl": "https://picsum.photos/seed/indian-guy-808/600/800",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "creator-9",
+      "description": "Indian Influencer Ananya - Art & Photography",
+      "imageUrl": "https://picsum.photos/seed/indian-girl-909/600/800",
+      "imageHint": "indian girl"
+    },
+    {
+      "id": "creator-10",
+      "description": "Indian Influencer Sameer - Gaming & Entertainment",
+      "imageUrl": "https://picsum.photos/seed/indian-guy-1010/600/800",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Testimonial Avatar 1",
+      "imageUrl": "https://picsum.photos/seed/avatar1/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Testimonial Avatar 2",
+      "imageUrl": "https://picsum.photos/seed/avatar2/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Testimonial Avatar 3",
+      "imageUrl": "https://picsum.photos/seed/avatar3/100/100",
+      "imageHint": "profile person"
+    }
+  ]
+}
