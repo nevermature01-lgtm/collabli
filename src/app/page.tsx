@@ -8,7 +8,7 @@ import { AICopyAssistant } from '@/components/landing/AICopyAssistant';
 import { siteConfig } from '@/config/site-content';
 
 export default function Home() {
-  const { announcement, hero, features, pricing, testimonials, global } = siteConfig;
+  const { announcement, features, pricing, testimonials, global } = siteConfig;
 
   return (
     <MainLayout>
@@ -20,12 +20,7 @@ export default function Home() {
       />
       
       <HeroSection 
-        badge={hero.badge}
-        title={hero.title}
-        subtitle={hero.subtitle}
-        primaryCTA={hero.primaryCTA}
-        secondaryCTA={hero.secondaryCTA}
-        imageKey={hero.image}
+        imageSrc="/desktop-version.png"
         hasAnnouncement={global.showAnnouncementBar}
       />
 
