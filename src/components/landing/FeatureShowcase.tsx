@@ -3,7 +3,6 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const FeatureShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Instagram');
@@ -94,16 +93,6 @@ export const FeatureShowcase: React.FC = () => {
     }
   ];
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (sliderRef.current) {
-      const scrollAmount = 400;
-      sliderRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!sliderRef.current) return;
     setIsDragging(true);
@@ -154,23 +143,6 @@ export const FeatureShowcase: React.FC = () => {
 
         {/* Creator Slider Section */}
         <div className="mt-12 w-full relative group">
-          {/* Navigation Buttons */}
-          <button 
-            onClick={() => handleScroll('left')}
-            className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-white transition-all hover:scale-110 active:scale-95 border border-white/50 opacity-0 group-hover:opacity-100 hidden md:flex"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={() => handleScroll('right')}
-            className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-white transition-all hover:scale-110 active:scale-95 border border-white/50 opacity-0 group-hover:opacity-100 hidden md:flex"
-            aria-label="Next"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
           {/* Fading Edge Gradients */}
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f2eb] via-[#f5f2eb]/50 to-transparent z-40 pointer-events-none hidden md:block" />
@@ -243,6 +215,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
         )}
         style={{ transformStyle: 'preserve-3d' }}
       >
+        {/* Light Reflection Overlay */}
         <div 
           className={cn(
             "absolute inset-0 rounded-2xl pointer-events-none z-30 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-white/40 via-transparent to-transparent",
@@ -251,6 +224,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           style={{ transform: 'translateZ(60px)' }}
         />
         
+        {/* Profile Image with Depth */}
         <div className="relative overflow-hidden rounded-t-2xl" style={{ transform: 'translateZ(30px)' }}>
           <Image 
             src={creator.image} 
@@ -260,6 +234,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
             className="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none" 
             data-ai-hint="portrait person"
           />
+          {/* Top Badges */}
           <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
             <span className="bg-black/60 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full backdrop-blur-md border border-white/10">
               Verified
@@ -270,6 +245,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           </div>
         </div>
         
+        {/* Content with Depth */}
         <div className="p-4 text-left relative z-10" style={{ transform: 'translateZ(50px)' }}>
           <div className="flex items-center justify-between mb-0.5">
             <p className="text-[15px] font-bold text-gray-900 tracking-tight">{creator.name}</p>
