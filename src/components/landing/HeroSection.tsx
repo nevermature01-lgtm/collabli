@@ -26,8 +26,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     >
       <div className="container mx-auto px-4 md:px-10 relative z-10 pointer-events-none">
         <div className="max-w-[650px] pointer-events-auto">
-          {/* Sub-content block */}
-          <div className="mt-6 max-w-[520px]">
+          {/* Sub-content block shifted down */}
+          <div className="mt-40 max-w-[520px]">
             <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
               Discover. Collaborate. Create Impact.
             </h3>
