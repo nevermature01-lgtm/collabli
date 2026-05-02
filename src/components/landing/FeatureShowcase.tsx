@@ -121,8 +121,8 @@ export const FeatureShowcase: React.FC = () => {
           Everything your creator program needs, from first search to final report.
         </p>
 
-        {/* Tabs Bar */}
-        <div className="mt-6 flex justify-center">
+        {/* Tabs Bar - Reduced mt-6 to mt-4 */}
+        <div className="mt-4 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
               <button
@@ -141,9 +141,9 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Slider Section */}
-        <div className="mt-12 w-full relative group">
-          {/* Slider Container */}
+        {/* Creator Slider Section - Reduced mt-12 to mt-6 */}
+        <div className="mt-6 w-full relative group">
+          {/* Slider Container - Reduced py-12 to py-8 */}
           <div 
             ref={sliderRef}
             onMouseDown={handleMouseDown}
@@ -151,7 +151,7 @@ export const FeatureShowcase: React.FC = () => {
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
             className={cn(
-              "overflow-x-auto no-scrollbar py-12 px-4 md:px-20 cursor-grab active:cursor-grabbing select-none",
+              "overflow-x-auto no-scrollbar py-8 px-4 md:px-20 cursor-grab active:cursor-grabbing select-none",
               isDragging && "cursor-grabbing"
             )}
             style={{ scrollSnapType: 'x mandatory' }}
