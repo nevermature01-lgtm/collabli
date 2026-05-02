@@ -28,19 +28,17 @@ export const FeatureShowcase: React.FC = () => {
           Everything your creator program needs, from first search to final report.
         </p>
 
-        {/* Side-by-Side Layout for Tabs and Image */}
-        <div className="mt-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start max-w-[1100px] mx-auto text-left">
-          
-          {/* Vertical Tabs (I Shape) */}
-          <div className="w-full lg:w-72 flex flex-col bg-[#e9e4da] rounded-2xl p-2 gap-1 shrink-0">
+        {/* Tabs Bar - Horizontal */}
+        <div className="mt-12 flex justify-center">
+          <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={cn(
-                  "w-full px-6 py-4 rounded-xl text-[14px] text-left transition-all duration-300",
+                  "px-4 md:px-6 py-2.5 rounded-full text-[13px] md:text-[14px] transition-all duration-300",
                   activeTab === tab 
-                    ? "bg-white text-black shadow-[0_2px_12px_rgba(0,0,0,0.06)] font-semibold" 
+                    ? "bg-white text-black shadow-[0_2px_8px_rgba(0,0,0,0.08)] font-semibold" 
                     : "text-[#444] hover:bg-white/40 hover:text-black"
                 )}
               >
@@ -48,22 +46,21 @@ export const FeatureShowcase: React.FC = () => {
               </button>
             ))}
           </div>
+        </div>
 
-          {/* Dashboard Preview Card */}
-          <div className="flex-1 w-full bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-3 md:p-5 animate-in fade-in slide-in-from-right-4 duration-700">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-gray-100">
-              {dashboardImg && (
-                <Image 
-                  src={dashboardImg.imageUrl}
-                  alt={dashboardImg.description}
-                  fill
-                  className="object-cover"
-                  data-ai-hint={dashboardImg.imageHint}
-                />
-              )}
-              {/* Minimalist UI Mock overlay elements */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
-            </div>
+        {/* Dashboard Preview Card */}
+        <div className="mt-8 max-w-[1100px] mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-3 md:p-5 animate-in fade-in zoom-in duration-700">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-gray-100">
+            {dashboardImg && (
+              <Image 
+                src={dashboardImg.imageUrl}
+                alt={dashboardImg.description}
+                fill
+                className="object-cover"
+                data-ai-hint={dashboardImg.imageHint}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
           </div>
         </div>
 
