@@ -161,6 +161,7 @@ export const Footer: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .arrow {
@@ -180,14 +181,17 @@ export const Footer: React.FC = () => {
           color: #000;
         }
 
-        .footer-link:hover .arrow {
-          color: #facc15 !important; /* CTA YELLOW */
-          transform: translateX(10px) !important; /* FORCE MOVEMENT */
+        .footer-link:hover .arrow-wrapper {
+          transform: translateX(10px) rotate(-45deg) !important; /* GLIDE + DIAGONAL UP (↗) */
           filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
         }
 
-        .footer-link:active .arrow {
-          transform: translateX(6px) !important;
+        .footer-link:hover .arrow {
+          color: #facc15 !important; /* CTA YELLOW */
+        }
+
+        .footer-link:active .arrow-wrapper {
+          transform: translateX(6px) rotate(-45deg) !important;
           transition-duration: 0.1s;
         }
 
