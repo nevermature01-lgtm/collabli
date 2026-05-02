@@ -225,7 +225,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
               width={260} 
               height={280} 
               className="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none" 
-              data-ai-hint="indian person"
+              data-ai-hint={imageData.imageHint}
             />
           )}
           <div className="absolute top-3 left-3 flex flex-col gap-2" style={{ transform: 'translateZ(45px)' }}>
