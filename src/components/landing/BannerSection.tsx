@@ -27,11 +27,11 @@ export const BannerSection: React.FC = () => {
           {/* RIGHT: CONTENT SECTION */}
           <div className="w-full lg:max-w-[480px] text-center lg:text-left lg:pr-[40px]">
             <div className="space-y-3">
-              <h2 className="text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-[-0.5px] text-[#111111]">
-                Find Creators Your Brand Will Actually <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0ab99d] to-[#34d399]">Love</span>
+              <h2 className="text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-[-0.5px] text-foreground">
+                Find Creators Your Brand Will Actually <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#34d399]">Love</span>
               </h2>
               
-              <p className="text-[14px] md:text-[15px] leading-[1.6] text-[#5f6b7a] max-w-[420px] mx-auto lg:mx-0">
+              <p className="text-[14px] md:text-[15px] leading-[1.6] text-muted-foreground max-w-[420px] mx-auto lg:mx-0">
                 Stop guessing. Our AI matches you with creators who truly align with your brand voice, audience, and goals.
               </p>
             </div>
@@ -41,11 +41,11 @@ export const BannerSection: React.FC = () => {
               {/* Subtle backdrop glow */}
               <div 
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] pointer-events-none opacity-40 blur-3xl lg:left-0 lg:translate-x-0" 
-                style={{ background: 'radial-gradient(circle at center, rgba(10,185,157,0.15), transparent 60%)' }} 
+                style={{ background: 'radial-gradient(circle at center, hsla(var(--primary), 0.15), transparent 60%)' }} 
               />
               
               <div className="relative flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-0">
-                <button className="px-4 py-2 rounded-full bg-gradient-to-br from-[#0ab99d] to-[#059669] text-white font-semibold text-[10px] md:text-xs shadow-[0_10px_25px_rgba(10,185,157,0.3)] hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_35px_rgba(10,185,157,0.4)] transition-all duration-300 flex items-center group">
+                <button className="px-4 py-2 rounded-full bg-primary text-primary-foreground font-semibold text-[10px] md:text-xs shadow-[0_10px_25px_rgba(10,185,157,0.3)] hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_35px_rgba(10,185,157,0.4)] transition-all duration-300 flex items-center group">
                   Start Matching Now
                   <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
