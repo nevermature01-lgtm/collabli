@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Users, Handshake, CheckCircle } from 'lucide-react';
 
@@ -6,6 +8,44 @@ interface HeroSectionProps {
   imageSrc: string;
   hasAnnouncement?: boolean;
 }
+
+const TypewriterText: React.FC<{ text: string; delay?: number; startDelay?: number }> = ({ 
+  text, 
+  delay = 40,
+  startDelay = 1500
+}) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStarted(true);
+    }, startDelay);
+    return () => clearTimeout(timer);
+  }, [startDelay]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + text[index]);
+        setIndex((prev) => prev + 1);
+      }, delay);
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text, delay, started]);
+
+  return (
+    <span className="relative">
+      {displayedText}
+      {index < text.length && started && (
+        <span className="inline-block w-[2px] h-[1em] bg-[#0ab99d] ml-0.5 animate-pulse align-middle" />
+      )}
+    </span>
+  );
+};
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   imageSrc,
@@ -83,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="hidden lg:block absolute bottom-[220px] right-2 w-[160px] bg-white/60 backdrop-blur-md border border-white/30 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.05),inset_1px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_0_rgba(0,0,0,0.1)] p-3 z-20 hover:-translate-y-2 hover:scale-105 transition-all duration-500 cursor-default animate-in fade-in slide-in-from-right duration-1000 delay-700">
         <div className="text-[#0ab99d] text-2xl font-serif mb-1 leading-none">“</div>
         <p className="text-xs text-gray-700 leading-tight font-medium">
-          This platform helped me collaborate with amazing brands that truly align with my audience.
+          <TypewriterText text="This platform helped me collaborate with amazing brands that truly align with my audience." startDelay={2000} />
         </p>
         <p className="text-[9px] text-gray-400 mt-1.5 tracking-wider uppercase font-bold">
           — FASHION CREATOR
@@ -94,7 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="hidden lg:block absolute bottom-[40px] right-[40px] w-[200px] bg-white/60 backdrop-blur-md border border-white/30 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.05),inset_1px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_0_rgba(0,0,0,0.1)] p-3 z-20 hover:-translate-y-2 hover:scale-105 transition-all duration-500 cursor-default animate-in fade-in slide-in-from-right duration-1000 delay-900">
         <div className="text-[#0ab99d] text-2xl font-serif mb-1 leading-none">“</div>
         <p className="text-xs text-gray-700 leading-tight font-medium">
-          We found the perfect influencer in just a few clicks. Great experience!
+          <TypewriterText text="We found the perfect influencer in just a few clicks. Great experience!" startDelay={3500} />
         </p>
         <p className="text-[9px] text-gray-400 mt-1.5 tracking-wider uppercase font-bold">
           — BRAND HEAD
