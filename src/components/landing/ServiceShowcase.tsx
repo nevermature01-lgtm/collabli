@@ -46,7 +46,7 @@ export const ServiceShowcase: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 px-4 bg-[#f5f2eb] overflow-hidden">
+    <section className="py-8 px-4 bg-[#f4e7b5] overflow-hidden">
       <div className="max-w-6xl mx-auto rounded-3xl bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_15px_40px_rgba(0,0,0,0.06),0_5px_15px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:-translate-y-1 p-4 md:p-6">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center max-w-2xl mx-auto mb-4 space-y-1 animate-in fade-in slide-in-from-bottom-2 duration-700">
