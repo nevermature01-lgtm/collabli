@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -49,13 +48,11 @@ export const ServiceShowcase: React.FC = () => {
     }
   ];
 
-  // Find the image object based on the currently active feature's imageId
   const activeFeature = features.find(f => f.id === activeId);
   const activeImg = PlaceHolderImages.find(img => img.id === activeFeature?.imageId);
 
   return (
     <section className="py-8 px-4 bg-[#f4e7b5] overflow-hidden">
-      {/* Enhanced Glassmorphism Container */}
       <div className="max-w-6xl mx-auto rounded-3xl bg-white/30 backdrop-blur-2xl border border-white/20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all duration-500 hover:-translate-y-1 p-4 md:p-6">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center max-w-2xl mx-auto mb-4 space-y-1 animate-in fade-in slide-in-from-bottom-2 duration-700">
@@ -71,7 +68,6 @@ export const ServiceShowcase: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 items-center">
-            {/* LEFT: Interactive Feature Cards - Narrower width */}
             <div className="flex flex-col gap-1.5 relative lg:col-span-2">
               {features.map((feature, idx) => {
                 const Icon = feature.icon;
@@ -132,7 +128,6 @@ export const ServiceShowcase: React.FC = () => {
               })}
             </div>
 
-            {/* RIGHT: Sophisticated Dashboard Visual - Larger width */}
             <div className="relative group w-full lg:col-span-3">
               <div className="absolute -inset-2 bg-white/20 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
               
@@ -145,6 +140,7 @@ export const ServiceShowcase: React.FC = () => {
                     fill
                     className="object-cover transition-all duration-700 animate-in fade-in zoom-in-95"
                     data-ai-hint={activeImg.imageHint}
+                    priority={activeId === 1}
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
