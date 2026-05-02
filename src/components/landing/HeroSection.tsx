@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section 
       className={cn(
-        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-4 md:pb-6",
+        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-4 md:pb-10",
       )}
       style={{
         backgroundImage: `url('${imageSrc}')`,
@@ -26,49 +26,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       aria-label="SaaS Product Showcase"
     >
       <div className="container mx-auto px-4 md:px-10 relative z-10 pointer-events-none">
-        <div className="max-w-[640px] pointer-events-auto">
-          {/* Sub-content block shifted to the very bottom and scaled down */}
-          <div className="max-w-[520px]">
-            <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed mb-3">
+        <div className="max-w-[800px] pointer-events-auto">
+          {/* Sub-content block shifted to the very bottom */}
+          <div className="max-w-[640px]">
+            <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4">
               The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
             </p>
 
-            <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] font-semibold text-black shadow-sm hover:scale-105 active:scale-95 transition-all duration-200">
+            <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-6 py-3 rounded-full text-xs md:text-sm font-semibold text-black shadow-md hover:scale-105 active:scale-95 transition-all duration-200 mb-8">
               FIND THE RIGHT MATCH →
             </button>
 
-            {/* Stats section - Scaled down */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mt-4">
+            {/* Stats section - Increased size and length */}
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-4">
               {/* Stat 1 */}
-              <div className="flex items-center gap-1.5">
-                <div className="w-6 h-6 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <Users className="w-3 h-3" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Users className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-black leading-tight">50K+</p>
-                  <p className="text-[7px] text-gray-500 leading-none">Influencers</p>
+                  <p className="text-sm md:text-base font-bold text-black leading-tight">50K+</p>
+                  <p className="text-[10px] md:text-xs text-gray-500 leading-none">Influencers</p>
                 </div>
               </div>
 
               {/* Stat 2 */}
-              <div className="flex items-center gap-1.5">
-                <div className="w-6 h-6 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <Handshake className="w-3 h-3" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Handshake className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-black leading-tight">10K+</p>
-                  <p className="text-[7px] text-gray-500 leading-none">Brand Partners</p>
+                  <p className="text-sm md:text-base font-bold text-black leading-tight">10K+</p>
+                  <p className="text-[10px] md:text-xs text-gray-500 leading-none">Brand Partners</p>
                 </div>
               </div>
 
               {/* Stat 3 */}
-              <div className="flex items-center gap-1.5">
-                <div className="w-6 h-6 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <CheckCircle className="w-3 h-3" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-black leading-tight">100%</p>
-                  <p className="text-[7px] text-gray-500 leading-none">Verified Profiles</p>
+                  <p className="text-sm md:text-base font-bold text-black leading-tight">100%</p>
+                  <p className="text-[10px] md:text-xs text-gray-500 leading-none">Verified Profiles</p>
                 </div>
               </div>
             </div>
