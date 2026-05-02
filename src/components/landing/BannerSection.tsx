@@ -16,12 +16,12 @@ export const BannerSection: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-[40vh] py-8 md:py-12 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
-      <div className="container mx-auto px-4 max-w-[1200px] w-full">
+    <section className="h-auto md:h-[40vh] min-h-[320px] py-[60px] md:py-0 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
+      <div className="container mx-auto px-5 md:px-4 max-w-[1200px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
           {/* LEFT: VISUAL STACK */}
-          <div className="relative w-full max-w-[500px] aspect-[4/3] flex items-center justify-center">
+          <div className="relative w-full max-w-[500px] aspect-[4/3] flex items-center justify-center transform scale-[0.85] md:scale-100 transition-transform duration-500">
             {/* CARD 1: BACKGROUND GLASS CARD */}
             <div className="absolute left-0 top-10 w-[320px] h-[220px] bg-white/60 backdrop-blur-xl rounded-[32px] border border-white/40 shadow-[0_30px_80px_rgba(0,0,0,0.06)] p-6 z-0 flex flex-col justify-between">
               <div className="flex items-center gap-3">
