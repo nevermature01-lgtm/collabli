@@ -37,9 +37,9 @@ export default function Home() {
 
       <BrandsSlider />
 
-      <FeatureShowcase />
-
       <ServiceShowcase />
+
+      <FeatureShowcase />
     </MainLayout>
   );
 }
