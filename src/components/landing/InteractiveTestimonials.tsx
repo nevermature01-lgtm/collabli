@@ -70,11 +70,10 @@ export const InteractiveTestimonials: React.FC = () => {
 
   const activeTestimonial = testimonials[currentIndex];
   const activePreview = PlaceHolderImages.find(img => img.id === activeTestimonial.previewImageId);
-  const activeAvatar = PlaceHolderImages.find(img => img.id === activeTestimonial.avatarId);
 
   return (
     <section 
-      className="py-16 md:py-24 bg-[#F7FBFB] overflow-hidden"
+      className="min-h-screen lg:h-screen flex items-center bg-[#F7FBFB] overflow-hidden py-16 lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -98,7 +97,6 @@ export const InteractiveTestimonials: React.FC = () => {
                 {testimonials.map((testimonial, index) => {
                   const isActive = index === currentIndex;
                   const isNext = index === (currentIndex + 1) % testimonials.length;
-                  const isPrev = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
                   
                   return (
                     <div
