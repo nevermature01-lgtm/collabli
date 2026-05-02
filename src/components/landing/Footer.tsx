@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden px-10 py-[100px] md:px-[60px] selection:bg-[#0ab99d]/10 selection:text-[#0ab99d]">
+    <footer className="relative min-height-[100vh] w-full flex flex-col justify-between overflow-hidden px-10 py-[100px] md:px-[60px] selection:bg-[#0ab99d]/10 selection:text-[#0ab99d]">
       {/* MESH BACKGROUND - LIGHT PREMIUM THEME */}
       <div 
         className="absolute inset-0 z-0"
@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
         {[...Array(12)].map((_, i) => (
           <div 
             key={i}
-            className="absolute bg-black/5 rounded-full animate-float-slow"
+            className="absolute bg-black/[0.05] rounded-full animate-float-slow"
             style={{
               width: Math.random() * 4 + 2 + 'px',
               height: Math.random() * 4 + 2 + 'px',
@@ -81,10 +81,10 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300 hover:text-[#0ab99d] hover:border-black/20"
+                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75"
                 >
                   <span>{link.name}</span>
-                  <ArrowRight className="w-5 h-5 text-black/40 group-hover:text-[#0ab99d] group-hover:translate-x-1.5 transition-all duration-300" />
+                  <ArrowRight className="arrow w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -100,10 +100,10 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300 hover:text-[#0ab99d] hover:border-black/20"
+                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75"
                 >
                   <span>{link.name}</span>
-                  <ArrowRight className="w-5 h-5 text-black/40 group-hover:text-[#0ab99d] group-hover:translate-x-1.5 transition-all duration-300" />
+                  <ArrowRight className="arrow w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -144,6 +144,39 @@ export const Footer: React.FC = () => {
         }
         .animate-float-slow {
           animation: float-slow infinite ease-in-out;
+        }
+
+        .footer-link {
+          cursor: pointer;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .arrow {
+          color: rgba(0,0,0,0.35);
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-link:hover {
+          color: #000;
+          border-bottom-color: rgba(250, 204, 21, 0.4);
+        }
+
+        .footer-link:hover .arrow {
+          color: #facc15;
+          transform: translateX(8px);
+          filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
+        }
+
+        .footer-link:active .arrow {
+          transform: translateX(6px);
+          color: #facc15;
+        }
+
+        @media (max-width: 768px) {
+          .footer-link {
+            font-size: 18px;
+            padding: 12px 0;
+          }
         }
       `}</style>
     </footer>
