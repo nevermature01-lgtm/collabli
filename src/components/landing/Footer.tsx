@@ -81,10 +81,12 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75"
+                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
                 >
-                  <span>{link.name}</span>
-                  <ArrowRight className="arrow w-5 h-5" />
+                  <span className="text-content transition-colors duration-300">{link.name}</span>
+                  <div className="arrow-wrapper">
+                    <ArrowRight className="arrow w-5 h-5" />
+                  </div>
                 </a>
               ))}
             </div>
@@ -100,10 +102,12 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75"
+                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
                 >
-                  <span>{link.name}</span>
-                  <ArrowRight className="arrow w-5 h-5" />
+                  <span className="text-content transition-colors duration-300">{link.name}</span>
+                  <div className="arrow-wrapper">
+                    <ArrowRight className="arrow w-5 h-5" />
+                  </div>
                 </a>
               ))}
             </div>
@@ -147,29 +151,44 @@ export const Footer: React.FC = () => {
         }
 
         .footer-link {
-          cursor: pointer;
+          cursor: pointer !important;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+          position: relative;
+        }
+
+        .arrow-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .arrow {
+          display: inline-block !important;
           color: rgba(0,0,0,0.35);
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* HOVER INTERACTIONS */
         .footer-link:hover {
+          color: #000 !important;
+          border-bottom-color: rgba(250, 204, 21, 0.4) !important;
+          background: rgba(0, 0, 0, 0.01); /* Safety highlight */
+        }
+
+        .footer-link:hover .text-content {
           color: #000;
-          border-bottom-color: rgba(250, 204, 21, 0.4);
         }
 
         .footer-link:hover .arrow {
-          color: #facc15;
-          transform: translateX(8px);
+          color: #facc15 !important;
+          transform: translateX(10px) !important;
           filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
         }
 
         .footer-link:active .arrow {
-          transform: translateX(6px);
-          color: #facc15;
+          transform: translateX(6px) !important;
+          transition-duration: 0.1s;
         }
 
         @media (max-width: 768px) {
