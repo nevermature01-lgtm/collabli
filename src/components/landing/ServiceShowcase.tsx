@@ -47,16 +47,17 @@ export const ServiceShowcase: React.FC = () => {
 
   return (
     <section className="py-8 px-4 bg-[#f4e7b5] overflow-hidden">
-      <div className="max-w-6xl mx-auto rounded-3xl bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_15px_40px_rgba(0,0,0,0.06),0_5px_15px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:-translate-y-1 p-4 md:p-6">
+      {/* Enhanced Glassmorphism Container */}
+      <div className="max-w-6xl mx-auto rounded-3xl bg-white/30 backdrop-blur-2xl border border-white/20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5)] transition-all duration-500 hover:-translate-y-1 p-4 md:p-6">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center max-w-2xl mx-auto mb-4 space-y-1 animate-in fade-in slide-in-from-bottom-2 duration-700">
-            <span className="inline-block px-2 py-0.5 bg-primary/10 text-primary text-[8px] font-bold tracking-[1.5px] uppercase rounded-full">
+            <span className="inline-block px-2 py-0.5 bg-black/10 text-black/60 text-[8px] font-bold tracking-[1.5px] uppercase rounded-full">
               The Hub for Excellence
             </span>
             <h2 className="text-lg md:text-xl font-bold text-[#111] leading-tight tracking-tight">
               All-in-one Influencer & Social Media Hub
             </h2>
-            <p className="text-[#666] text-[9px] md:text-[10px] max-w-lg mx-auto">
+            <p className="text-[#111]/60 text-[9px] md:text-[10px] max-w-lg mx-auto">
               Scale your creator ecosystem effortlessly with the industry's most intuitive platform.
             </p>
           </div>
@@ -76,15 +77,15 @@ export const ServiceShowcase: React.FC = () => {
                     className={cn(
                       "group flex gap-2.5 p-2 rounded-xl border transition-all duration-500 cursor-pointer animate-in fade-in slide-in-from-left-4",
                       isActive 
-                        ? "bg-white border-transparent shadow-[0_8px_16px_rgba(0,0,0,0.04)] ring-1 ring-black/5" 
-                        : "bg-transparent border-transparent hover:bg-white/40 hover:border-gray-100"
+                        ? "bg-white/80 border-white/40 shadow-lg ring-1 ring-black/5" 
+                        : "bg-white/10 border-transparent hover:bg-white/40 hover:border-white/20"
                     )}
                   >
                     <div className={cn(
                       "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-500",
                       isActive 
                         ? `${feature.accent} text-white shadow-md ${feature.accent.replace('bg-', 'shadow-')}/20` 
-                        : `${feature.light} group-hover:scale-110`
+                        : `${feature.light} bg-white/60 group-hover:scale-110`
                     )}>
                       <Icon className="w-3.5 h-3.5" />
                     </div>
@@ -93,7 +94,7 @@ export const ServiceShowcase: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <h4 className={cn(
                           "text-[11px] font-bold transition-colors duration-300",
-                          isActive ? "text-gray-900" : "text-gray-500 group-hover:text-gray-900"
+                          isActive ? "text-gray-900" : "text-gray-700 group-hover:text-gray-900"
                         )}>
                           {feature.title}
                         </h4>
@@ -125,23 +126,23 @@ export const ServiceShowcase: React.FC = () => {
 
             {/* RIGHT: Sophisticated Dashboard Visual */}
             <div className="relative group w-full animate-in fade-in slide-in-from-right-8 duration-1000">
-              <div className="absolute -inset-2 bg-primary/5 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
+              <div className="absolute -inset-2 bg-white/20 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
               
-              <div className="relative aspect-[16/10] w-full bg-white rounded-xl overflow-hidden shadow-[0_15px_30px_-8px_rgba(0,0,0,0.06)] border border-gray-100 z-10">
+              <div className="relative aspect-[16/10] w-full bg-white/40 rounded-xl overflow-hidden shadow-[0_15px_30px_-8px_rgba(0,0,0,0.1)] border border-white/40 z-10 backdrop-blur-md">
                 {dashboardImg && (
                   <Image 
                     src={dashboardImg.imageUrl}
                     alt="Influencer Dashboard"
                     fill
-                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105 opacity-90"
                     data-ai-hint="dashboard screen"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
               </div>
 
               {/* Floating Detail 1: Quality Score */}
-              <div className="absolute -bottom-2 -left-2 md:bottom-4 md:-left-4 bg-white/80 backdrop-blur-xl p-2 rounded-lg shadow-[0_12px_24px_rgba(0,0,0,0.06)] border border-white/50 z-20 animate-float">
+              <div className="absolute -bottom-2 -left-2 md:bottom-4 md:-left-4 bg-white/60 backdrop-blur-xl p-2 rounded-lg shadow-xl border border-white/40 z-20 animate-float">
                 <div className="flex items-center gap-1.5">
                   <div className="w-6 h-6 rounded-md bg-emerald-500 text-white flex items-center justify-center shadow-md shadow-emerald-500/10">
                     <Activity className="w-3 h-3" />
@@ -154,7 +155,7 @@ export const ServiceShowcase: React.FC = () => {
               </div>
 
               {/* Floating Detail 2: Global Reach */}
-              <div className="absolute -top-4 -right-1 md:top-4 md:-right-2 bg-white/80 backdrop-blur-xl p-2 rounded-lg shadow-[0_12px_24px_rgba(0,0,0,0.04)] border border-white/50 z-20 animate-in fade-in slide-in-from-top-2 duration-1000 delay-500">
+              <div className="absolute -top-4 -right-1 md:top-4 md:-right-2 bg-white/60 backdrop-blur-xl p-2 rounded-lg shadow-xl border border-white/40 z-20 animate-in fade-in slide-in-from-top-2 duration-1000 delay-500">
                  <div className="space-y-1.5 w-24 md:w-32">
                     <div className="flex justify-between items-center">
                       <p className="text-[8px] font-bold text-gray-900">Reach</p>
@@ -162,13 +163,13 @@ export const ServiceShowcase: React.FC = () => {
                     </div>
                     <div className="space-y-1">
                       <div className="flex items-center justify-between">
-                        <div className="w-full h-0.5 bg-gray-100 rounded-full overflow-hidden mr-1.5">
+                        <div className="w-full h-0.5 bg-gray-200/50 rounded-full overflow-hidden mr-1.5">
                           <div className="w-3/4 h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
                         </div>
                         <span className="text-[6px] font-bold text-gray-500">75%</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <div className="w-full h-0.5 bg-gray-100 rounded-full overflow-hidden mr-1.5">
+                        <div className="w-full h-0.5 bg-gray-200/50 rounded-full overflow-hidden mr-1.5">
                           <div className="w-1/2 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
                         </div>
                         <span className="text-[6px] font-bold text-gray-500">50%</span>
