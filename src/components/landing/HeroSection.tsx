@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Floating Testimonial Card 1 */}
-      <div className="hidden lg:block absolute bottom-[220px] right-2 w-[110px] bg-white/70 backdrop-blur-md border border-white/20 rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.06)] p-3 z-20">
+      <div className="hidden lg:block absolute bottom-[220px] right-2 w-[110px] bg-white/60 backdrop-blur-xl border border-white/30 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.1)] p-3 z-20">
         <div className="text-[#0ab99d] text-lg font-serif mb-1 leading-none">“</div>
         <p className="text-[10px] text-gray-700 leading-tight font-medium">
           This platform helped me collaborate with amazing brands that truly align with my audience.
