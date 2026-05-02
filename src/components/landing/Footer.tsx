@@ -164,7 +164,7 @@ export const Footer: React.FC = () => {
         }
 
         .arrow {
-          display: inline-block !important;
+          display: inline-block !important; /* CRITICAL FOR TRANSFORM */
           color: rgba(0,0,0,0.35);
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -181,8 +181,8 @@ export const Footer: React.FC = () => {
         }
 
         .footer-link:hover .arrow {
-          color: #facc15 !important;
-          transform: translateX(10px) !important;
+          color: #facc15 !important; /* CTA YELLOW */
+          transform: translateX(10px) !important; /* FORCE MOVEMENT */
           filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
         }
 
