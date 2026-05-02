@@ -4,12 +4,12 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { ChevronRight } from 'lucide-react';
 
 export const FeatureShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Instagram');
   const sliderRef = useRef<HTMLDivElement>(null);
   
-  // Drag to scroll state
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -118,12 +118,11 @@ export const FeatureShowcase: React.FC = () => {
         <h2 className="text-[32px] md:text-[42px] font-semibold text-[#222] leading-tight max-w-2xl mx-auto">
           The all-in-one creator platform
         </h2>
-        <p className="text-sm md:text-base text-[#777] mt-[2px] max-w-xl mx-auto">
+        <p className="text-sm md:text-base text-[#777] mt-1 max-w-xl mx-auto">
           Everything your creator program needs, from first search to final report.
         </p>
 
-        {/* Tabs Bar */}
-        <div className="mt-2 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
               <button
@@ -142,8 +141,7 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Slider Section */}
-        <div className="mt-2 w-full relative group">
+        <div className="mt-6 w-full relative">
           <div 
             ref={sliderRef}
             onMouseDown={handleMouseDown}
@@ -211,7 +209,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
         )}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Light Reflection Overlay */}
         <div 
           className={cn(
             "absolute inset-0 rounded-2xl pointer-events-none z-30 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-white/40 via-transparent to-transparent",
@@ -220,7 +217,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           style={{ transform: 'translateZ(60px)' }}
         />
         
-        {/* Profile Image with Depth */}
         <div className="relative overflow-hidden rounded-t-2xl" style={{ transform: 'translateZ(30px)' }}>
           <Image 
             src={creator.image} 
@@ -230,20 +226,22 @@ const CreatorCard = ({ creator }: { creator: any }) => {
             className="h-[280px] w-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none" 
             data-ai-hint="portrait person"
           />
-          {/* Top Badges */}
-          <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
+          <div className="absolute top-3 left-3 flex flex-col gap-2" style={{ transform: 'translateZ(45px)' }}>
             {creator.isTop && (
-              <span className="inline-flex items-center justify-center bg-black/80 text-white text-[9px] font-extrabold tracking-[2px] uppercase px-3 h-[22px] rounded-none backdrop-blur-md border border-white shadow-[0_0_12px_rgba(255,255,255,0.6)]">
+              <span className="inline-flex items-center gap-1.5 bg-black/90 text-amber-400 text-[10px] font-bold tracking-wider uppercase px-2.5 h-[24px] rounded-md backdrop-blur-md border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.25)]">
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V18H19V19Z"/>
+                </svg>
                 Top Creator
               </span>
             )}
-            <span className="bg-gradient-to-br from-[#00c6a7] to-[#00e0b8] text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-lg border border-white/10">
+            <span className="inline-flex items-center gap-1 bg-emerald-500/90 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 h-[22px] rounded-full shadow-lg border border-white/10 backdrop-blur-sm">
+              <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
               Rising
             </span>
           </div>
         </div>
         
-        {/* Content with Depth */}
         <div className="p-4 text-left relative z-10" style={{ transform: 'translateZ(50px)' }}>
           <div className="flex items-center justify-between mb-0.5">
             <p className="text-[15px] font-bold text-gray-900 tracking-tight">{creator.name}</p>
