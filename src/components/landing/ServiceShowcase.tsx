@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Sparkles, Activity, Palette, Users, ChevronRight, Globe } from 'lucide-react';
+import { Zap, BarChart3, PenTool, MessageCircle, ChevronRight, Globe, Activity } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -15,7 +15,7 @@ export const ServiceShowcase: React.FC = () => {
       id: 1,
       title: "Work smarter with influencers",
       description: "Build high-impact relationships with verified creators through our AI-matching.",
-      icon: Sparkles,
+      icon: Zap,
       accent: "bg-blue-600",
       light: "bg-blue-50 text-blue-600",
     },
@@ -23,7 +23,7 @@ export const ServiceShowcase: React.FC = () => {
       id: 2,
       title: "Monitor brand performance",
       description: "Real-time tracking of your campaigns and competitors everywhere.",
-      icon: Activity,
+      icon: BarChart3,
       accent: "bg-emerald-600",
       light: "bg-emerald-50 text-emerald-600",
     },
@@ -31,7 +31,7 @@ export const ServiceShowcase: React.FC = () => {
       id: 3,
       title: "Create winning content",
       description: "Leverage data-backed insights to craft content that converts.",
-      icon: Palette,
+      icon: PenTool,
       accent: "bg-purple-600",
       light: "bg-purple-50 text-purple-600",
     },
@@ -39,7 +39,7 @@ export const ServiceShowcase: React.FC = () => {
       id: 4,
       title: "Deep consumer engagement",
       description: "Directly connect with your audience and foster community.",
-      icon: Users,
+      icon: MessageCircle,
       accent: "bg-orange-600",
       light: "bg-orange-50 text-orange-600",
     }
