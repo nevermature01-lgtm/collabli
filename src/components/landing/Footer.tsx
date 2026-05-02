@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
             <img 
               src="/logo.png" 
               alt="Collabli" 
-              className="h-[28px] w-auto"
+              className="h-[42px] w-auto filter drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
             />
           </div>
         </div>
