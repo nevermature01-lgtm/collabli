@@ -233,7 +233,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           {/* Top Badges */}
           <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
             {creator.isTop && (
-              <span className="bg-black/80 text-white text-[9px] font-extrabold tracking-[2px] uppercase px-3 py-1.5 rounded-none backdrop-blur-md border border-white shadow-[0_0_12px_rgba(255,255,255,0.6)]">
+              <span className="inline-flex items-center justify-center bg-black/80 text-white text-[9px] font-extrabold tracking-[2px] uppercase px-3 h-[22px] rounded-none backdrop-blur-md border border-white shadow-[0_0_12px_rgba(255,255,255,0.6)]">
                 Top Creator
               </span>
             )}
