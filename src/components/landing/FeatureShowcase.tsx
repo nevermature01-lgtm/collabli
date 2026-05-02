@@ -6,13 +6,13 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 export const FeatureShowcase: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('Affiliate & Ad');
+  const [activeTab, setActiveTab] = useState('Instagram');
 
   const tabs = [
-    'Discover & Nurture',
-    'Manage & Scale',
-    'Affiliate & Ad',
-    'Measure & Refine'
+    'Instagram',
+    'Youtube',
+    'Facebook',
+    'Twitter'
   ];
 
   const creators = [
