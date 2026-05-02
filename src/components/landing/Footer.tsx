@@ -1,11 +1,34 @@
 
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Linkedin, Instagram, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const Footer: React.FC = () => {
+  const [particles, setParticles] = useState<{
+    id: number;
+    width: string;
+    height: string;
+    left: string;
+    top: string;
+    animationDelay: string;
+    animationDuration: string;
+  }[]>([]);
+
+  useEffect(() => {
+    const generatedParticles = [...Array(12)].map((_, i) => ({
+      id: i,
+      width: Math.random() * 4 + 2 + 'px',
+      height: Math.random() * 4 + 2 + 'px',
+      left: Math.random() * 100 + '%',
+      top: Math.random() * 100 + '%',
+      animationDelay: Math.random() * 5 + 's',
+      animationDuration: Math.random() * 4 + 6 + 's',
+    }));
+    setParticles(generatedParticles);
+  }, []);
+
   const aboutLinks = [
     { name: 'For Brands', href: '#' },
     { name: 'For Influencers', href: '#' },
@@ -40,17 +63,17 @@ export const Footer: React.FC = () => {
 
       {/* FLOATING PARTICLES - SUBTLE DARK */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {[...Array(12)].map((_, i) => (
+        {particles.map((p) => (
           <div 
-            key={i}
+            key={p.id}
             className="absolute bg-black/[0.05] rounded-full animate-float-slow"
             style={{
-              width: Math.random() * 4 + 2 + 'px',
-              height: Math.random() * 4 + 2 + 'px',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-              animationDelay: Math.random() * 5 + 's',
-              animationDuration: Math.random() * 4 + 6 + 's',
+              width: p.width,
+              height: p.height,
+              left: p.left,
+              top: p.top,
+              animationDelay: p.animationDelay,
+              animationDuration: p.animationDuration,
             }}
           />
         ))}
