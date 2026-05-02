@@ -1,3 +1,4 @@
+
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AnnouncementBar } from '@/components/landing/AnnouncementBar';
 import { HeroSection } from '@/components/landing/HeroSection';
@@ -6,6 +7,7 @@ import { FeatureShowcase } from '@/components/landing/FeatureShowcase';
 import { ServiceShowcase } from '@/components/landing/ServiceShowcase';
 import { BannerSection } from '@/components/landing/BannerSection';
 import { InteractiveTestimonials } from '@/components/landing/InteractiveTestimonials';
+import { Footer } from '@/components/landing/Footer';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import { siteConfig } from '@/config/site-content';
 
@@ -46,6 +48,8 @@ export default function Home() {
       <InteractiveTestimonials />
 
       <BannerSection />
+
+      <Footer />
     </MainLayout>
   );
 }
