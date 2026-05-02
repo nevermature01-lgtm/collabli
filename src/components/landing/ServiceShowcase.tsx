@@ -150,19 +150,6 @@ export const ServiceShowcase: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating Detail 1: Quality Score */}
-              <div className="absolute -bottom-2 -left-2 md:bottom-4 md:-left-4 bg-white/60 backdrop-blur-xl p-2 rounded-lg shadow-xl border border-white/40 z-20 animate-float">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-6 rounded-md bg-emerald-500 text-white flex items-center justify-center shadow-md shadow-emerald-500/10">
-                    <Activity className="w-3 h-3" />
-                  </div>
-                  <div>
-                    <p className="text-sm md:text-base font-black text-gray-900 tracking-tight leading-none">79.80%</p>
-                    <p className="text-[7px] text-emerald-600 font-bold tracking-wider uppercase leading-none mt-0.5">Growth</p>
-                  </div>
-                </div>
-              </div>
-
               {/* Floating Detail 2: Global Reach */}
               <div className="absolute -top-4 -right-1 md:top-4 md:-right-2 bg-white/60 backdrop-blur-xl p-2 rounded-lg shadow-xl border border-white/40 z-20 animate-in fade-in slide-in-from-top-2 duration-1000 delay-500">
                  <div className="space-y-1.5 w-24 md:w-32">
