@@ -38,13 +38,13 @@ export const ServiceShowcase: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 px-4 bg-white overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center py-10 px-4 bg-white overflow-hidden">
       <div className="container mx-auto">
-        <h2 className="text-[32px] md:text-[36px] font-semibold text-center max-w-4xl mx-auto mb-16 text-[#222] leading-tight">
+        <h2 className="text-[32px] md:text-[36px] font-semibold text-center max-w-4xl mx-auto mb-10 text-[#222] leading-tight">
           All Your Influencer and Social Media Needs Covered in One Intuitive Hub
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT: Feature Cards */}
           <div className="flex flex-col gap-4">
             {features.map((feature) => {
