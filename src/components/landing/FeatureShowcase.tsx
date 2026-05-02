@@ -214,7 +214,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
         )}
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Luxury Reflection Overlay */}
         <div className={cn(
           "absolute inset-0 rounded-2xl pointer-events-none z-30 transition-opacity duration-500 opacity-0 bg-gradient-to-br from-white/40 via-transparent to-transparent",
           isHovering && "opacity-100"
