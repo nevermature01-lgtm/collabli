@@ -37,16 +37,64 @@
       "imageHint": "chat dashboard"
     },
     {
-      "id": "feature-automation",
-      "description": "Workflow Automation Visualization",
-      "imageUrl": "https://picsum.photos/seed/forge2/600/400",
-      "imageHint": "automation workflow"
+      "id": "creator-1",
+      "description": "Indian Influencer Riya",
+      "imageUrl": "https://picsum.photos/seed/indian-riya/260/280",
+      "imageHint": "indian person"
     },
     {
-      "id": "feature-analytics",
-      "description": "Real-time Data Analytics",
-      "imageUrl": "https://picsum.photos/seed/forge3/600/400",
-      "imageHint": "data analytics"
+      "id": "creator-2",
+      "description": "Indian Influencer Arjun",
+      "imageUrl": "https://picsum.photos/seed/indian-arjun/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-3",
+      "description": "Indian Influencer Neha",
+      "imageUrl": "https://picsum.photos/seed/indian-neha/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-4",
+      "description": "Indian Influencer Karan",
+      "imageUrl": "https://picsum.photos/seed/indian-karan/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-5",
+      "description": "Indian Influencer Pooja",
+      "imageUrl": "https://picsum.photos/seed/indian-pooja/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-6",
+      "description": "Indian Influencer Vikram",
+      "imageUrl": "https://picsum.photos/seed/indian-vikram/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-7",
+      "description": "Indian Influencer Simran",
+      "imageUrl": "https://picsum.photos/seed/indian-simran/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-8",
+      "description": "Indian Influencer Rahul",
+      "imageUrl": "https://picsum.photos/seed/indian-rahul/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-9",
+      "description": "Indian Influencer Ananya",
+      "imageUrl": "https://picsum.photos/seed/indian-ananya/260/280",
+      "imageHint": "indian person"
+    },
+    {
+      "id": "creator-10",
+      "description": "Indian Influencer Sameer",
+      "imageUrl": "https://picsum.photos/seed/indian-sameer/260/280",
+      "imageHint": "indian person"
     },
     {
       "id": "avatar-1",
