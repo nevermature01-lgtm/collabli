@@ -1,6 +1,7 @@
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AnnouncementBar } from '@/components/landing/AnnouncementBar';
 import { HeroSection } from '@/components/landing/HeroSection';
+import FloatingNavbar from '@/components/FloatingNavbar';
 import { siteConfig } from '@/config/site-content';
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
         ctaLink={announcement.ctaLink}
         isVisible={global.showAnnouncementBar}
       />
+      
+      <FloatingNavbar />
       
       <HeroSection 
         imageSrc="/desktop-version.png"
