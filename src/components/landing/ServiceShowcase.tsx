@@ -67,8 +67,9 @@ export const ServiceShowcase: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 items-center">
-            <div className="flex flex-col gap-1.5 relative lg:col-span-2">
+          {/* Using grid-cols-12 for better control: 4 for tabs (33%), 8 for image (66%) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-center">
+            <div className="flex flex-col gap-1.5 relative lg:col-span-4">
               {features.map((feature, idx) => {
                 const Icon = feature.icon;
                 const isActive = activeId === feature.id;
@@ -128,7 +129,7 @@ export const ServiceShowcase: React.FC = () => {
               })}
             </div>
 
-            <div className="relative group w-full lg:col-span-3">
+            <div className="relative group w-full lg:col-span-8">
               <div className="absolute -inset-2 bg-white/20 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
               
               <div className="relative aspect-[16/10] w-full bg-white/40 rounded-xl overflow-hidden shadow-[0_15px_30px_-8px_rgba(0,0,0,0.1)] border border-white/40 z-10 backdrop-blur-md">
