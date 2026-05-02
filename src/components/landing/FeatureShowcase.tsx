@@ -118,26 +118,6 @@ export const FeatureShowcase: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Bottom Feature Strip */}
-        <div className="mt-12 max-w-[1100px] mx-auto bg-[#0f2f28] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-between gap-8 md:gap-4 text-left">
-          <div className="flex-1">
-            <p className="text-white text-sm font-semibold mb-1">Affiliate Links</p>
-            <p className="text-gray-400 text-xs">Generate unique tracking links instantly</p>
-          </div>
-          <div className="flex-1">
-            <p className="text-white text-sm font-semibold mb-1">Promo Codes</p>
-            <p className="text-gray-400 text-xs">Customized discount codes for creators</p>
-          </div>
-          <div className="flex-1">
-            <p className="text-white text-sm font-semibold mb-1">Paid Ads</p>
-            <p className="text-gray-400 text-xs">Boost high-performing creator content</p>
-          </div>
-          <div className="flex-1 border-none md:border-l md:border-white/10 md:pl-8">
-            <p className="text-white text-sm font-semibold mb-1">Commission</p>
-            <p className="text-gray-400 text-xs">Flexible and automated payout structures</p>
-          </div>
-        </div>
       </div>
     </section>
   );
