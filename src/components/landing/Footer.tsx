@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative min-height-[100vh] w-full flex flex-col justify-between overflow-hidden px-10 py-[100px] md:px-[60px] selection:bg-[#0ab99d]/10 selection:text-[#0ab99d]">
+    <footer className="relative w-full flex flex-col justify-between overflow-hidden px-10 pt-[80px] pb-[40px] md:px-[40px] selection:bg-[#0ab99d]/10 selection:text-[#0ab99d]">
       {/* MESH BACKGROUND - LIGHT PREMIUM THEME */}
       <div 
         className="absolute inset-0 z-0"
@@ -79,10 +79,10 @@ export const Footer: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 w-full flex flex-col h-full flex-grow justify-between">
+      <div className="relative z-10 w-full flex flex-col max-w-[1100px] mx-auto">
         
         {/* LOGO AREA */}
-        <div className="mb-20">
+        <div className="mb-[60px]">
           <div className="flex items-center gap-2">
             <img 
               src="/logo.png" 
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* GRID LAYOUT (CENTER) */}
-        <div className="max-w-[900px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[120px] mb-20">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[80px] mb-[60px]">
           {/* ABOUT COLUMN */}
           <div className="flex flex-col">
             <span className="text-[11px] font-bold tracking-[2px] uppercase text-black/50 mb-[30px] block">
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
+                  className="footer-link group flex justify-between items-center py-[12px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
                 >
                   <span className="text-content transition-colors duration-300">{link.name}</span>
                   <div className="arrow-wrapper">
@@ -125,7 +125,7 @@ export const Footer: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="footer-link group flex justify-between items-center py-[14px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
+                  className="footer-link group flex justify-between items-center py-[12px] border-b border-black/[0.08] text-[22px] font-normal text-black/75 transition-all duration-300"
                 >
                   <span className="text-content transition-colors duration-300">{link.name}</span>
                   <div className="arrow-wrapper">
@@ -138,7 +138,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="mt-auto pt-10 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-10 border-t border-black/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4 text-[12px] font-medium text-black/50">
             <span>© 2026 Collabli</span>
             <span className="w-1 h-1 rounded-full bg-black/10" />
@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
         }
 
         .arrow-wrapper {
-          display: inline-block !important; /* CRITICAL FOR TRANSFORM */
+          display: inline-block !important;
           transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -195,7 +195,6 @@ export const Footer: React.FC = () => {
         .footer-link:hover {
           color: #000 !important;
           border-bottom-color: rgba(0, 0, 0, 0.4) !important;
-          background: rgba(0, 0, 0, 0.01); /* Safety highlight */
         }
 
         .footer-link:hover .text-content {
@@ -203,12 +202,12 @@ export const Footer: React.FC = () => {
         }
 
         .footer-link:hover .arrow-wrapper {
-          transform: translateX(10px) rotate(-45deg) !important; /* GLIDE + DIAGONAL UP (↗) */
+          transform: translateX(10px) rotate(-45deg) !important;
           filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
         }
 
         .footer-link:hover .arrow {
-          color: #000 !important; /* BLACK */
+          color: #000 !important;
         }
 
         .footer-link:active .arrow-wrapper {
@@ -219,7 +218,7 @@ export const Footer: React.FC = () => {
         @media (max-width: 768px) {
           .footer-link {
             font-size: 18px;
-            padding: 12px 0;
+            padding: 10px 0;
           }
         }
       `}</style>
