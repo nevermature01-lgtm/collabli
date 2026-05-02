@@ -13,7 +13,7 @@ export default function FloatingNavbar() {
   ];
 
   return (
-    <div className="fixed top-5 right-32 z-[1000]">
+    <div className="fixed top-5 left-5 z-[1000]">
       <div className="flex items-center bg-white rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-1.5 px-4">
 
         {/* Desktop Menu */}
@@ -43,7 +43,7 @@ export default function FloatingNavbar() {
 
       {/* Mobile Dropdown */}
       {open && (
-        <div className="md:hidden absolute right-0 mt-2 bg-white rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-2 w-48 overflow-hidden">
+        <div className="md:hidden absolute left-0 mt-2 bg-white rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-2 w-48 overflow-hidden">
           {menuItems.map((item, index) => (
             <div
               key={index}
