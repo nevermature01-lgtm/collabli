@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface AnnouncementBarProps {
@@ -35,23 +34,30 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({
 
   if (!show) return null;
 
+  // Split message to highlight second part if delimiter exists (e.g., " — ")
+  const parts = message.includes(' — ') ? message.split(' — ') : [message];
+
   return (
-    <div className="absolute top-0 left-0 right-0 z-[100] h-[48px] bg-primary/10 border-b border-primary/20 backdrop-blur-md transition-all duration-300">
-      <div className="container mx-auto h-full px-4 flex items-center justify-center relative">
-        <p className="text-sm md:text-base font-medium text-primary text-center truncate pr-8">
-          {message}
+    <div className="absolute top-0 left-0 right-0 z-[100] min-h-[40px] h-[48px] bg-[rgba(10,185,157,0.08)] border-b border-[rgba(10,185,157,0.15)] backdrop-blur-[8px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] transition-all duration-300">
+      <div className="container mx-auto h-full px-4 flex items-center justify-center relative py-[10px]">
+        <p className="text-sm md:text-base font-medium text-[#1a1a1a] text-center truncate pr-8 tracking-[0.2px]">
+          {parts[0]}
+          {parts.length > 1 && (
+            <span className="text-[#0ab99d] font-semibold"> — {parts[1]}</span>
+          )}
           {ctaLink && ctaText && (
             <a 
               href={ctaLink} 
-              className="ml-2 font-bold underline underline-offset-2 hover:text-primary/80 transition-colors"
+              className="ml-2 text-[#0ab99d] font-semibold relative inline-block group"
             >
               {ctaText}
+              <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-[#0ab99d] transition-all duration-300 group-hover:w-full" />
             </a>
           )}
         </p>
         <button
           onClick={handleDismiss}
-          className="absolute right-4 p-1 rounded-full hover:bg-primary/10 text-primary/60 hover:text-primary transition-colors"
+          className="absolute right-4 p-1 rounded-full hover:bg-black/5 text-[#1a1a1a]/40 hover:text-[#1a1a1a] transition-colors"
           aria-label="Dismiss announcement"
         >
           <X className="w-4 h-4" />
