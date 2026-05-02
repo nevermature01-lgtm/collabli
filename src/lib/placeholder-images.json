@@ -17,6 +17,24 @@
       "description": "Real-time Data Analytics",
       "imageUrl": "https://picsum.photos/seed/forge3/600/400",
       "imageHint": "data analytics"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Testimonial Avatar 1",
+      "imageUrl": "https://picsum.photos/seed/avatar1/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Testimonial Avatar 2",
+      "imageUrl": "https://picsum.photos/seed/avatar2/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Testimonial Avatar 3",
+      "imageUrl": "https://picsum.photos/seed/avatar3/100/100",
+      "imageHint": "profile person"
     }
   ]
 }
