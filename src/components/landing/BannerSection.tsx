@@ -51,17 +51,6 @@ export const BannerSection: React.FC = () => {
                 </button>
               </div>
             </div>
-
-            {/* MINIMAL STATS (OPTIONAL POLISH) */}
-            <div className="flex items-center gap-5 justify-center lg:justify-start pt-6 opacity-40">
-              <div className="flex flex-col">
-                <span className="text-[9px] uppercase font-bold tracking-[2px] text-[#111111]">12M+ Impact</span>
-              </div>
-              <div className="w-[3px] h-[3px] rounded-full bg-gray-400" />
-              <div className="flex flex-col">
-                <span className="text-[9px] uppercase font-bold tracking-[2px] text-[#111111]">850+ Brands</span>
-              </div>
-            </div>
           </div>
 
         </div>
