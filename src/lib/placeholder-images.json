@@ -39,61 +39,61 @@
     {
       "id": "creator-1",
       "description": "Indian Influencer Riya - Lifestyle & Fitness",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator1/600/800",
       "imageHint": "indian girl"
     },
     {
       "id": "creator-2",
       "description": "Indian Influencer Arjun - Tech & Gaming",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator2/600/800",
       "imageHint": "indian man"
     },
     {
       "id": "creator-3",
       "description": "Indian Influencer Neha - Fashion & Beauty",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator3/600/800",
       "imageHint": "indian girl"
     },
     {
       "id": "creator-4",
       "description": "Indian Influencer Karan - Food & Travel",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator4/600/800",
       "imageHint": "indian man"
     },
     {
       "id": "creator-5",
       "description": "Indian Influencer Pooja - Lifestyle & Beauty",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator5/600/800",
       "imageHint": "indian girl"
     },
     {
       "id": "creator-6",
       "description": "Indian Influencer Vikram - Tech & Business",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator6/600/800",
       "imageHint": "indian man"
     },
     {
       "id": "creator-7",
       "description": "Indian Influencer Simran - Fashion & Fitness",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator7/600/800",
       "imageHint": "indian girl"
     },
     {
       "id": "creator-8",
       "description": "Indian Influencer Rahul - Food & Travel",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator8/600/800",
       "imageHint": "indian man"
     },
     {
       "id": "creator-9",
       "description": "Indian Influencer Ananya - Art & Photography",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator9/600/800",
       "imageHint": "indian girl"
     },
     {
       "id": "creator-10",
       "description": "Indian Influencer Sameer - Gaming & Entertainment",
-      "imageUrl": "/influencer-1.jpg",
+      "imageUrl": "https://picsum.photos/seed/creator10/600/800",
       "imageHint": "indian man"
     },
     {
@@ -112,6 +112,48 @@
       "id": "avatar-3",
       "description": "Testimonial Avatar 3",
       "imageUrl": "https://picsum.photos/seed/avatar3/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-4",
+      "description": "Testimonial Avatar 4",
+      "imageUrl": "https://picsum.photos/seed/avatar4/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-5",
+      "description": "Testimonial Avatar 5",
+      "imageUrl": "https://picsum.photos/seed/avatar5/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-6",
+      "description": "Testimonial Avatar 6",
+      "imageUrl": "https://picsum.photos/seed/avatar6/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-7",
+      "description": "Testimonial Avatar 7",
+      "imageUrl": "https://picsum.photos/seed/avatar7/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-8",
+      "description": "Testimonial Avatar 8",
+      "imageUrl": "https://picsum.photos/seed/avatar8/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-9",
+      "description": "Testimonial Avatar 9",
+      "imageUrl": "https://picsum.photos/seed/avatar9/100/100",
+      "imageHint": "profile person"
+    },
+    {
+      "id": "avatar-10",
+      "description": "Testimonial Avatar 10",
+      "imageUrl": "https://picsum.photos/seed/avatar10/100/100",
       "imageHint": "profile person"
     }
   ]
