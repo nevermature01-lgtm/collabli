@@ -33,7 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Discover. Collaborate. Create Impact.
             </h3>
 
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-5">
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4">
               The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
             </p>
 
@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
 
             {/* Stats section */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 mt-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 mt-8">
               {/* Stat 1 */}
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
@@ -81,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Floating Testimonial Card 1 */}
-      <div className="hidden lg:block absolute top-4 right-4 w-[110px] bg-white rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.06)] p-3 z-20">
+      <div className="hidden lg:block absolute top-[120px] right-2 w-[110px] bg-white rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.06)] p-3 z-20">
         <div className="text-[#0ab99d] text-lg font-serif mb-1 leading-none">“</div>
         <p className="text-[10px] text-gray-700 leading-tight font-medium">
           This platform helped me collaborate with amazing brands that truly align with my audience.
