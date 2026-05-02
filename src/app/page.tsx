@@ -1,4 +1,5 @@
 
+
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AnnouncementBar } from '@/components/landing/AnnouncementBar';
 import { HeroSection } from '@/components/landing/HeroSection';

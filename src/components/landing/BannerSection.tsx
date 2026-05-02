@@ -16,7 +16,7 @@ export const BannerSection: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-[40vh] py-12 md:py-16 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
+    <section className="min-h-[40vh] py-8 md:py-12 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
       <div className="container mx-auto px-4 max-w-[1200px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
