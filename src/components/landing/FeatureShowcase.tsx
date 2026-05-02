@@ -235,10 +235,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
                 Top Creator
               </span>
             )}
-            <span className="inline-flex items-center gap-1 bg-emerald-500/90 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 h-[22px] rounded-full shadow-lg border border-white/10 backdrop-blur-sm">
-              <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-              Rising
-            </span>
           </div>
         </div>
         
