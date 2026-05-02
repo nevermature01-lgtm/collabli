@@ -86,7 +86,7 @@ export const ServiceShowcase: React.FC = () => {
                       "group flex gap-2.5 p-2 rounded-xl border transition-all duration-500 cursor-pointer animate-in fade-in slide-in-from-left-4",
                       isActive 
                         ? "bg-white/80 border-white/40 shadow-lg ring-1 ring-black/5" 
-                        : "bg-white/10 border-transparent hover:bg-white/40 hover:border-white/20"
+                        : "bg-white/10 border-white/10 hover:bg-white/40 hover:border-white/30"
                     )}
                   >
                     <div className={cn(
