@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section 
       className={cn(
-        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-2 md:pb-4",
+        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-1 md:pb-2",
       )}
       style={{
         backgroundImage: `url('${imageSrc}')`,
