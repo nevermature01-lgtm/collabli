@@ -45,12 +45,12 @@ export const BannerSection: React.FC = () => {
               />
               
               <div className="relative flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-0">
-                <button className="px-6 py-3 rounded-full bg-gradient-to-br from-[#0ab99d] to-[#059669] text-white font-semibold text-[14px] shadow-[0_10px_25px_rgba(10,185,157,0.3)] hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_35px_rgba(10,185,157,0.4)] transition-all duration-300 flex items-center group">
+                <button className="px-4 py-2 rounded-full bg-gradient-to-br from-[#0ab99d] to-[#059669] text-white font-semibold text-[10px] md:text-xs shadow-[0_10px_25px_rgba(10,185,157,0.3)] hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_35px_rgba(10,185,157,0.4)] transition-all duration-300 flex items-center group">
                   Start Matching Now
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="mt-4 sm:mt-0 sm:ml-[20px] text-[#0ab99d] font-medium text-[14px] relative group py-1 transition-colors hover:text-[#059669]">
+                <button className="mt-4 sm:mt-0 sm:ml-[20px] text-[#0ab99d] font-medium text-[10px] md:text-xs relative group py-1 transition-colors hover:text-[#059669]">
                   View Success Stories
                   <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#0ab99d] transition-all duration-300 group-hover:w-full"></span>
                 </button>
