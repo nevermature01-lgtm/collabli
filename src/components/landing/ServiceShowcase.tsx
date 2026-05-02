@@ -46,144 +46,146 @@ export const ServiceShowcase: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-white to-[#f9fafb] overflow-hidden">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center max-w-2xl mx-auto mb-10 space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-[9px] font-bold tracking-[1.5px] uppercase rounded-full">
-            The Hub for Excellence
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-[#111] leading-tight tracking-tight">
-            All-in-one Influencer & Social Media Hub
-          </h2>
-          <p className="text-[#666] text-xs md:text-sm max-w-xl mx-auto">
-            Scale your creator ecosystem effortlessly with the industry's most intuitive and powerful platform.
-          </p>
-        </div>
+    <section className="py-16 px-4 bg-[#f5f2eb] overflow-hidden">
+      <div className="max-w-6xl mx-auto rounded-[2rem] bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.08),0_8px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:-translate-y-1 p-8 md:p-12">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-[9px] font-bold tracking-[1.5px] uppercase rounded-full">
+              The Hub for Excellence
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#111] leading-tight tracking-tight">
+              All-in-one Influencer & Social Media Hub
+            </h2>
+            <p className="text-[#666] text-xs md:text-sm max-w-xl mx-auto">
+              Scale your creator ecosystem effortlessly with the industry's most intuitive and powerful platform.
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* LEFT: Interactive Feature Cards */}
-          <div className="flex flex-col gap-3 relative">
-            {features.map((feature, idx) => {
-              const Icon = feature.icon;
-              const isActive = activeId === feature.id;
-              
-              return (
-                <div 
-                  key={feature.id}
-                  onClick={() => setActiveId(feature.id)}
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                  className={cn(
-                    "group flex gap-4 p-4 rounded-xl border transition-all duration-500 cursor-pointer animate-in fade-in slide-in-from-left-4",
-                    isActive 
-                      ? "bg-white border-transparent shadow-[0_12px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5" 
-                      : "bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200"
-                  )}
-                >
-                  <div className={cn(
-                    "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500",
-                    isActive 
-                      ? `${feature.accent} text-white shadow-lg ${feature.accent.replace('bg-', 'shadow-')}/20` 
-                      : `${feature.light} group-hover:scale-110`
-                  )}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  
-                  <div className="flex flex-col justify-center flex-1">
-                    <div className="flex items-center justify-between">
-                      <h4 className={cn(
-                        "text-sm font-bold transition-colors duration-300",
-                        isActive ? "text-gray-900" : "text-gray-500 group-hover:text-gray-900"
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* LEFT: Interactive Feature Cards */}
+            <div className="flex flex-col gap-3 relative">
+              {features.map((feature, idx) => {
+                const Icon = feature.icon;
+                const isActive = activeId === feature.id;
+                
+                return (
+                  <div 
+                    key={feature.id}
+                    onClick={() => setActiveId(feature.id)}
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                    className={cn(
+                      "group flex gap-4 p-4 rounded-xl border transition-all duration-500 cursor-pointer animate-in fade-in slide-in-from-left-4",
+                      isActive 
+                        ? "bg-white border-transparent shadow-[0_12px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5" 
+                        : "bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200"
+                    )}
+                  >
+                    <div className={cn(
+                      "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500",
+                      isActive 
+                        ? `${feature.accent} text-white shadow-lg ${feature.accent.replace('bg-', 'shadow-')}/20` 
+                        : `${feature.light} group-hover:scale-110`
+                    )}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    
+                    <div className="flex flex-col justify-center flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className={cn(
+                          "text-sm font-bold transition-colors duration-300",
+                          isActive ? "text-gray-900" : "text-gray-500 group-hover:text-gray-900"
+                        )}>
+                          {feature.title}
+                        </h4>
+                        {isActive && (
+                          <span className={cn("flex h-1.5 w-1.5 rounded-full animate-pulse", feature.accent)} />
+                        )}
+                      </div>
+                      
+                      <div className={cn(
+                        "grid transition-all duration-500 ease-in-out",
+                        isActive ? "grid-rows-[1fr] opacity-100 mt-1" : "grid-rows-[0fr] opacity-0"
                       )}>
-                        {feature.title}
-                      </h4>
-                      {isActive && (
-                        <span className={cn("flex h-1.5 w-1.5 rounded-full animate-pulse", feature.accent)} />
-                      )}
+                        <p className="text-xs text-gray-500 leading-relaxed overflow-hidden">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
                     
                     <div className={cn(
-                      "grid transition-all duration-500 ease-in-out",
-                      isActive ? "grid-rows-[1fr] opacity-100 mt-1" : "grid-rows-[0fr] opacity-0"
+                      "flex items-center transition-all duration-300",
+                      isActive ? "translate-x-0 opacity-100 text-gray-300" : "-translate-x-2 opacity-0"
                     )}>
-                      <p className="text-xs text-gray-500 leading-relaxed overflow-hidden">
-                        {feature.description}
-                      </p>
+                      <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
-                  
-                  <div className={cn(
-                    "flex items-center transition-all duration-300",
-                    isActive ? "translate-x-0 opacity-100 text-gray-300" : "-translate-x-2 opacity-0"
-                  )}>
-                    <ChevronRight className="w-4 h-4" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* RIGHT: Sophisticated Dashboard Visual */}
-          <div className="relative group w-full animate-in fade-in slide-in-from-right-8 duration-1000">
-            {/* Dashboard Shadow Layer */}
-            <div className="absolute -inset-4 bg-primary/5 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
-            
-            {/* Main Image Frame */}
-            <div className="relative aspect-[4/3] w-full bg-white rounded-2xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.08)] border border-gray-100 z-10">
-              {dashboardImg && (
-                <Image 
-                  src={dashboardImg.imageUrl}
-                  alt="Influencer Dashboard"
-                  fill
-                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
-                  data-ai-hint="dashboard screen"
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                );
+              })}
             </div>
 
-            {/* Floating Detail 1: Quality Score */}
-            <div className="absolute -bottom-6 -left-4 md:bottom-8 md:-left-8 bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-[0_16px_32px_rgba(0,0,0,0.08)] border border-white/50 z-20 animate-float">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md shadow-emerald-500/10">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">79.80%</p>
-                  <p className="text-[9px] text-emerald-600 font-bold tracking-wider uppercase">Growth Rate</p>
+            {/* RIGHT: Sophisticated Dashboard Visual */}
+            <div className="relative group w-full animate-in fade-in slide-in-from-right-8 duration-1000">
+              {/* Dashboard Shadow Layer */}
+              <div className="absolute -inset-4 bg-primary/5 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+              
+              {/* Main Image Frame */}
+              <div className="relative aspect-[4/3] w-full bg-white rounded-2xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.08)] border border-gray-100 z-10">
+                {dashboardImg && (
+                  <Image 
+                    src={dashboardImg.imageUrl}
+                    alt="Influencer Dashboard"
+                    fill
+                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                    data-ai-hint="dashboard screen"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Floating Detail 1: Quality Score */}
+              <div className="absolute -bottom-6 -left-4 md:bottom-8 md:-left-8 bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-[0_16px_32px_rgba(0,0,0,0.08)] border border-white/50 z-20 animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md shadow-emerald-500/10">
+                    <Activity className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">79.80%</p>
+                    <p className="text-[9px] text-emerald-600 font-bold tracking-wider uppercase">Growth Rate</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Floating Detail 2: Global Reach */}
-            <div className="absolute -top-10 -right-2 md:top-8 md:-right-6 bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-[0_16px_32px_rgba(0,0,0,0.06)] border border-white/50 z-20 animate-in fade-in slide-in-from-top-4 duration-1000 delay-500">
-               <div className="space-y-3 w-36 md:w-44">
-                  <div className="flex justify-between items-center">
-                    <p className="text-[10px] font-bold text-gray-900">Campaign Reach</p>
-                    <Globe className="w-3 h-3 text-blue-500" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mr-3">
-                        <div className="w-3/4 h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
+              {/* Floating Detail 2: Global Reach */}
+              <div className="absolute -top-10 -right-2 md:top-8 md:-right-6 bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-[0_16px_32px_rgba(0,0,0,0.06)] border border-white/50 z-20 animate-in fade-in slide-in-from-top-4 duration-1000 delay-500">
+                 <div className="space-y-3 w-36 md:w-44">
+                    <div className="flex justify-between items-center">
+                      <p className="text-[10px] font-bold text-gray-900">Campaign Reach</p>
+                      <Globe className="w-3 h-3 text-blue-500" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mr-3">
+                          <div className="w-3/4 h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
+                        </div>
+                        <span className="text-[8px] font-bold text-gray-500">75%</span>
                       </div>
-                      <span className="text-[8px] font-bold text-gray-500">75%</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mr-3">
-                        <div className="w-1/2 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+                      <div className="flex items-center justify-between">
+                        <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mr-3">
+                          <div className="w-1/2 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+                        </div>
+                        <span className="text-[8px] font-bold text-gray-500">50%</span>
                       </div>
-                      <span className="text-[8px] font-bold text-gray-500">50%</span>
                     </div>
-                  </div>
-                  <div className="pt-1 flex justify-between items-center">
-                    <div className="flex -space-x-1.5">
-                      {[1, 2, 3].map(i => (
-                        <div key={i} className="w-5 h-5 rounded-full border-2 border-white bg-gray-200" />
-                      ))}
+                    <div className="pt-1 flex justify-between items-center">
+                      <div className="flex -space-x-1.5">
+                        {[1, 2, 3].map(i => (
+                          <div key={i} className="w-5 h-5 rounded-full border-2 border-white bg-gray-200" />
+                        ))}
+                      </div>
+                      <span className="text-[8px] font-bold text-primary">+12k</span>
                     </div>
-                    <span className="text-[8px] font-bold text-primary">+12k</span>
-                  </div>
-               </div>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
