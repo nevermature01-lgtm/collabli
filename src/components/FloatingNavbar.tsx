@@ -14,7 +14,7 @@ export default function FloatingNavbar() {
 
   return (
     <div className="fixed top-5 right-10 z-[1000]">
-      <div className="flex items-center bg-white rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-2 px-4">
+      <div className="flex items-center bg-white rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-1.5 px-4">
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-0">
@@ -25,7 +25,7 @@ export default function FloatingNavbar() {
               </span>
 
               {index !== menuItems.length - 1 && (
-                <div className="w-px h-4 bg-gray-200 mx-3" />
+                <div className="w-px h-3 bg-gray-200 mx-3" />
               )}
             </div>
           ))}
