@@ -45,8 +45,8 @@ export const BannerSection: React.FC = () => {
               />
               
               <div className="relative flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-0">
-                <button className="px-4 py-2 rounded-full bg-primary text-primary-foreground font-semibold text-[10px] md:text-xs shadow-[0_10px_25px_rgba(10,185,157,0.3)] hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_14px_35px_rgba(10,185,157,0.4)] transition-all duration-300 flex items-center group">
-                  Start Matching Now
+                <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-md hover:scale-110 active:scale-95 transition-all duration-300 flex items-center group">
+                  Join now
                   <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
