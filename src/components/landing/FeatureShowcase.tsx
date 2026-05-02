@@ -29,7 +29,7 @@ export const FeatureShowcase: React.FC = () => {
         </p>
 
         {/* Tabs Bar - Horizontal */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
               <button
