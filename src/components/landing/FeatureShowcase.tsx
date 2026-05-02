@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useRef } from 'react';
@@ -112,17 +113,17 @@ export const FeatureShowcase: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f2eb] py-12 md:py-16 px-4 text-center overflow-hidden">
+    <section className="bg-[#f5f2eb] py-8 md:py-12 px-4 text-center overflow-hidden">
       <div className="container mx-auto w-full">
         <h2 className="text-[32px] md:text-[42px] font-semibold text-[#222] leading-tight max-w-2xl mx-auto">
           The all-in-one creator platform
         </h2>
-        <p className="text-sm md:text-base text-[#777] mt-[6px] max-w-xl mx-auto">
+        <p className="text-sm md:text-base text-[#777] mt-[2px] max-w-xl mx-auto">
           Everything your creator program needs, from first search to final report.
         </p>
 
         {/* Tabs Bar */}
-        <div className="mt-4 flex justify-center">
+        <div className="mt-2 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
               <button
@@ -142,7 +143,7 @@ export const FeatureShowcase: React.FC = () => {
         </div>
 
         {/* Creator Slider Section */}
-        <div className="mt-4 w-full relative group">
+        <div className="mt-2 w-full relative group">
           <div 
             ref={sliderRef}
             onMouseDown={handleMouseDown}
@@ -232,7 +233,7 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           {/* Top Badges */}
           <div className="absolute top-3 left-3 flex gap-1.5" style={{ transform: 'translateZ(45px)' }}>
             {creator.isTop && (
-              <span className="bg-black/60 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full backdrop-blur-md border border-white/10">
+              <span className="bg-black/80 text-white text-[9px] font-extrabold tracking-[2px] uppercase px-3 py-1.5 rounded-none backdrop-blur-md border border-white shadow-[0_0_12px_rgba(255,255,255,0.6)]">
                 Top Creator
               </span>
             )}
