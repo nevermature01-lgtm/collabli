@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section 
       className={cn(
-        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-4 md:pb-10",
+        "relative w-full h-screen overflow-hidden bg-background flex items-end pb-2 md:pb-4",
       )}
       style={{
         backgroundImage: `url('${imageSrc}')`,
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </button>
 
           {/* Stats section - now independent */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-2">
             {/* Stat 1 */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
