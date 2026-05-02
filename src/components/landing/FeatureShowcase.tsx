@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -43,6 +42,48 @@ export const FeatureShowcase: React.FC = () => {
       price: "₹2,800",
       rating: "4.7",
       image: "https://picsum.photos/seed/karan/240/260"
+    },
+    {
+      name: "Pooja Patel",
+      category: "Lifestyle • Beauty",
+      price: "₹3,000",
+      rating: "4.9",
+      image: "https://picsum.photos/seed/pooja/240/260"
+    },
+    {
+      name: "Vikram Rao",
+      category: "Tech • Business",
+      price: "₹5,000",
+      rating: "4.8",
+      image: "https://picsum.photos/seed/vikram/240/260"
+    },
+    {
+      name: "Simran Kaur",
+      category: "Fashion • Fitness",
+      price: "₹3,500",
+      rating: "4.9",
+      image: "https://picsum.photos/seed/simran/240/260"
+    },
+    {
+      name: "Rahul Gupta",
+      category: "Food • Travel",
+      price: "₹2,600",
+      rating: "4.6",
+      image: "https://picsum.photos/seed/rahul/240/260"
+    },
+    {
+      name: "Ananya Iyer",
+      category: "Art • Photography",
+      price: "₹4,000",
+      rating: "4.9",
+      image: "https://picsum.photos/seed/ananya/240/260"
+    },
+    {
+      name: "Sameer Khan",
+      category: "Gaming • Entertainment",
+      price: "₹3,800",
+      rating: "4.7",
+      image: "https://picsum.photos/seed/sameer/240/260"
     }
   ];
 
@@ -76,12 +117,18 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Cards Marketplace Section */}
-        <div className="mt-8 max-w-[1100px] mx-auto overflow-visible animate-in fade-in zoom-in duration-700 py-12">
-          <div className="flex gap-8 overflow-visible justify-center flex-wrap md:flex-nowrap" style={{ perspective: '1200px' }}>
-            {creators.map((creator, i) => (
-              <CreatorCard key={i} creator={creator} />
-            ))}
+        {/* Creator Cards Marketplace Section - Horizontal Scroll Showcase */}
+        <div className="mt-12 w-full overflow-hidden animate-in fade-in zoom-in duration-700 py-12 relative">
+          {/* Fading Edge Gradients for Premium Feel */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#f5f2eb] to-transparent z-40 pointer-events-none hidden md:block" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#f5f2eb] to-transparent z-40 pointer-events-none hidden md:block" />
+          
+          <div className="overflow-x-auto no-scrollbar pb-8 scroll-smooth flex">
+            <div className="flex gap-8 px-4 md:px-12 mx-auto overflow-visible" style={{ perspective: '1200px' }}>
+              {creators.map((creator, i) => (
+                <CreatorCard key={i} creator={creator} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -102,8 +149,8 @@ const CreatorCard = ({ creator }: { creator: any }) => {
     const centerY = rect.height / 2;
     
     // Calculate rotation degree based on mouse position relative to center
-    const degX = (y - centerY) / 10;
-    const degY = (centerX - x) / 10;
+    const degX = (y - centerY) / 12;
+    const degY = (centerX - x) / 12;
     
     setRotate({ x: degX, y: degY });
   };
@@ -140,9 +187,6 @@ const CreatorCard = ({ creator }: { creator: any }) => {
           )} 
           style={{ transform: 'translateZ(60px)' }}
         />
-        
-        {/* Edge Glow effect */}
-        <div className="absolute inset-0 rounded-2xl pointer-events-none border border-white/60 p-[1px] bg-gradient-to-br from-white/60 to-transparent [mask-image:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]" />
         
         {/* Image Layer with Depth */}
         <div className="relative overflow-hidden rounded-t-2xl" style={{ transform: 'translateZ(30px)' }}>
