@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -74,61 +73,54 @@ export const InteractiveTestimonials: React.FC = () => {
 
   return (
     <section 
-      className="h-screen flex items-center bg-[#F7FBFB] overflow-hidden"
+      className="h-screen flex items-center bg-[#F7FBFB] overflow-hidden py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           
           {/* LEFT COLUMN: 3D STACKED CAROUSEL */}
           <div className="w-full lg:w-3/5 relative flex flex-col items-center lg:items-start">
-            <div className="mb-12 text-center lg:text-left z-20">
-              <span className="inline-block px-3 py-1 bg-[#0ab99d]/10 text-[#0ab99d] text-[10px] md:text-xs font-bold tracking-[2px] uppercase rounded-full mb-4">
+            <div className="mb-8 text-center lg:text-left z-20">
+              <span className="inline-block px-2.5 py-0.5 bg-[#0ab99d]/10 text-[#0ab99d] text-[10px] md:text-xs font-bold tracking-[1.5px] uppercase rounded-full mb-3">
                 Success Stories
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
                 Trusted by the world's <br className="hidden md:block" /> most innovative brands
               </h2>
             </div>
 
-            <div className="relative w-full h-[450px] flex items-center justify-center lg:justify-start" style={{ perspective: '1200px' }}>
+            <div className="relative w-full h-[380px] flex items-center justify-center lg:justify-start" style={{ perspective: '1200px' }}>
               {testimonials.map((testimonial, index) => {
                 const total = testimonials.length;
-                // Calculate position relative to currentIndex
                 let position = index - currentIndex;
                 if (position < -1) position += total;
                 if (position > 1) position -= total;
 
-                // Visibility logic: only show -1, 0, 1
                 const isVisible = position === 0 || position === 1 || position === -1;
                 
-                // Style based on position
                 let transform = '';
                 let opacity = 0;
                 let zIndex = 0;
                 let filter = 'blur(0px)';
 
                 if (position === 0) {
-                  // Active Center
                   transform = 'translateX(0) scale(1) rotateY(0deg)';
                   opacity = 1;
                   zIndex = 10;
                 } else if (position === -1) {
-                  // Left Card
-                  transform = 'translateX(-40%) scale(0.85) rotateY(15deg)';
+                  transform = 'translateX(-35%) scale(0.85) rotateY(12deg)';
                   opacity = 0.4;
                   zIndex = 5;
-                  filter = 'blur(2px)';
+                  filter = 'blur(1px)';
                 } else if (position === 1) {
-                  // Right Card
-                  transform = 'translateX(40%) scale(0.85) rotateY(-15deg)';
+                  transform = 'translateX(35%) scale(0.85) rotateY(-12deg)';
                   opacity = 0.4;
                   zIndex = 5;
-                  filter = 'blur(2px)';
+                  filter = 'blur(1px)';
                 } else {
-                  // Hidden
-                  transform = position > 1 ? 'translateX(100%) scale(0.7)' : 'translateX(-100%) scale(0.7)';
+                  transform = position > 1 ? 'translateX(80%) scale(0.7)' : 'translateX(-80%) scale(0.7)';
                   opacity = 0;
                   zIndex = 0;
                 }
@@ -137,8 +129,8 @@ export const InteractiveTestimonials: React.FC = () => {
                   <div
                     key={testimonial.id}
                     className={cn(
-                      "absolute w-full max-w-[420px] rounded-[24px] p-8 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                      "bg-white/65 backdrop-blur-[14px] border border-black/5 shadow-[0_25px_70px_rgba(0,0,0,0.12)]",
+                      "absolute w-full max-w-[360px] rounded-[20px] p-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                      "bg-white/65 backdrop-blur-[14px] border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.1)]",
                       !isVisible && "pointer-events-none"
                     )}
                     style={{
@@ -150,29 +142,29 @@ export const InteractiveTestimonials: React.FC = () => {
                     }}
                   >
                     <div className="flex flex-col h-full">
-                      <div className="text-[#0ab99d]/20 mb-6">
-                        <Quote className="w-10 h-10 fill-current" />
+                      <div className="text-[#0ab99d]/20 mb-4">
+                        <Quote className="w-8 h-8 fill-current" />
                       </div>
                       
-                      <p className="text-lg md:text-xl font-medium text-gray-800 leading-relaxed mb-8 line-clamp-3">
+                      <p className="text-base md:text-lg font-medium text-gray-800 leading-relaxed mb-6 line-clamp-3">
                         "{testimonial.quote}"
                       </p>
 
-                      <div className="mt-auto flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#0ab99d]/20 bg-gray-100 shrink-0">
+                      <div className="mt-auto flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#0ab99d]/20 bg-gray-100 shrink-0">
                           {PlaceHolderImages.find(img => img.id === testimonial.avatarId) && (
                             <Image 
                               src={PlaceHolderImages.find(img => img.id === testimonial.avatarId)!.imageUrl} 
                               alt={testimonial.name}
-                              width={48}
-                              height={48}
+                              width={40}
+                              height={40}
                               className="object-cover w-full h-full"
                             />
                           )}
                         </div>
                         <div>
-                          <p className="font-bold text-gray-900 text-sm">{testimonial.name}</p>
-                          <p className="text-xs text-gray-500 font-medium">{testimonial.role}</p>
+                          <p className="font-bold text-gray-900 text-xs">{testimonial.name}</p>
+                          <p className="text-[10px] text-gray-500 font-medium">{testimonial.role}</p>
                         </div>
                       </div>
                     </div>
@@ -181,31 +173,31 @@ export const InteractiveTestimonials: React.FC = () => {
               })}
 
               {/* ARROW NAVIGATION */}
-              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-2 lg:-left-12 lg:-right-12 z-30 pointer-events-none">
+              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-1 lg:-left-10 lg:-right-10 z-30 pointer-events-none">
                 <button 
                   onClick={prevSlide}
-                  className="w-12 h-12 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-600 hover:text-[#0ab99d] hover:scale-110 hover:shadow-[0_0_20px_rgba(10,185,157,0.2)] transition-all duration-300 pointer-events-auto"
+                  className="w-10 h-10 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-600 hover:text-[#0ab99d] hover:scale-110 hover:shadow-[0_0_15px_rgba(10,185,157,0.15)] transition-all duration-300 pointer-events-auto"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button 
                   onClick={nextSlide}
-                  className="w-12 h-12 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-600 hover:text-[#0ab99d] hover:scale-110 hover:shadow-[0_0_20px_rgba(10,185,157,0.2)] transition-all duration-300 pointer-events-auto"
+                  className="w-10 h-10 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-600 hover:text-[#0ab99d] hover:scale-110 hover:shadow-[0_0_15px_rgba(10,185,157,0.15)] transition-all duration-300 pointer-events-auto"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
             {/* DOT INDICATORS */}
-            <div className="flex gap-2.5 mt-8 lg:mt-12 justify-center lg:justify-start w-full max-w-[420px]">
+            <div className="flex gap-2 mt-6 lg:mt-8 justify-center lg:justify-start w-full max-w-[360px]">
               {testimonials.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={cn(
-                    "h-1.5 rounded-full transition-all duration-500",
-                    idx === currentIndex ? "w-8 bg-[#0ab99d]" : "w-1.5 bg-gray-300 hover:bg-gray-400"
+                    "h-1 rounded-full transition-all duration-500",
+                    idx === currentIndex ? "w-6 bg-[#0ab99d]" : "w-1 bg-gray-300 hover:bg-gray-400"
                   )}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -215,9 +207,9 @@ export const InteractiveTestimonials: React.FC = () => {
 
           {/* RIGHT COLUMN: PREVIEW IMAGE */}
           <div className="w-full lg:w-2/5 relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[440px] aspect-[4/5] animate-in fade-in zoom-in duration-1000">
+            <div className="relative w-full max-w-[380px] aspect-[4/5] animate-in fade-in zoom-in duration-1000">
               {/* Main Preview Image */}
-              <div className="absolute inset-0 rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] border-[8px] border-white group">
+              <div className="absolute inset-0 rounded-[24px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.1)] border-[6px] border-white group">
                 {activePreview && (
                   <Image 
                     key={activePreview.id}
@@ -228,19 +220,19 @@ export const InteractiveTestimonials: React.FC = () => {
                     priority
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-50" />
               </div>
 
               {/* Floating Stat Card */}
-              <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50 animate-float">
-                <div className="flex items-center gap-3 mb-1">
-                  <div className="w-2 h-2 rounded-full bg-[#0ab99d] animate-pulse" />
-                  <p className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Performance</p>
+              <div className="absolute -bottom-4 -left-4 md:-left-8 bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 animate-float">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0ab99d] animate-pulse" />
+                  <p className="text-[9px] font-bold text-gray-400 tracking-wider uppercase">Performance</p>
                 </div>
-                <p className="text-2xl font-black text-gray-900">{activeTestimonial.stat}</p>
-                <div className="flex gap-0.5 mt-2">
+                <p className="text-xl font-black text-gray-900">{activeTestimonial.stat}</p>
+                <div className="flex gap-0.5 mt-1.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-[#0ab99d] text-[#0ab99d]" />
+                    <Star key={i} className="w-2.5 h-2.5 fill-[#0ab99d] text-[#0ab99d]" />
                   ))}
                 </div>
               </div>
