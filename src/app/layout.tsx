@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'SaaSForge | Premium Modular Landing Page',
+  title: 'Collabli | Premium Modular Landing Page',
   description: 'A modern, premium SaaS landing page built with modular architecture.',
 };
 

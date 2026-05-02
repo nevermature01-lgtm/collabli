@@ -34,7 +34,7 @@ export const Navbar: React.FC = () => {
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-premium">
             <Rocket className="w-6 h-6" />
           </div>
-          <span className="text-xl font-bold tracking-tight">SaaSForge</span>
+          <span className="text-xl font-bold tracking-tight">Collabli</span>
         </div>
 
         {/* Desktop Links */}

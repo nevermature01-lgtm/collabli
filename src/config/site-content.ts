@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'SaaSForge',
+  name: 'Collabli',
   global: {
     showAnnouncementBar: true,
   },
@@ -45,12 +45,12 @@ export const siteConfig = {
   },
   testimonials: {
     title: 'Trusted by Innovative Teams',
-    subtitle: 'See how SaaSForge is transforming businesses worldwide.',
+    subtitle: 'See how Collabli is transforming businesses worldwide.',
     items: [
       {
         name: 'Sarah Chen',
         role: 'CTO at TechFlow',
-        content: 'SaaSForge has completely transformed how our team manages complex workflows. The automation tools are unparalleled.',
+        content: 'Collabli has completely transformed how our team manages complex workflows. The automation tools are unparalleled.',
         avatar: 'avatar-1'
       },
       {

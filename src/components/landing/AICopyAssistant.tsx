@@ -56,7 +56,7 @@ export const AICopyAssistant: React.FC = () => {
           </div>
           <div>
             <h2 className="text-2xl font-bold">AI Copy Assistant</h2>
-            <p className="text-muted-foreground">Generate premium marketing copy for your SaaSForge site.</p>
+            <p className="text-muted-foreground">Generate premium marketing copy for your Collabli site.</p>
           </div>
         </div>
 
