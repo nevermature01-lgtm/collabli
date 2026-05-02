@@ -32,8 +32,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
           </p>
 
-          {/* Button - now centered */}
-          <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-md hover:scale-105 active:scale-95 transition-all duration-200 mb-6 block mx-auto">
+          {/* Button - shifted slightly right from center */}
+          <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold text-black shadow-md hover:scale-105 active:scale-95 transition-all duration-200 mb-6 block mx-auto translate-x-12">
             FIND THE RIGHT MATCH →
           </button>
 
