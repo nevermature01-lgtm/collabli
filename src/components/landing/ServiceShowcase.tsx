@@ -70,9 +70,9 @@ export const ServiceShowcase: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
-            {/* LEFT: Interactive Feature Cards */}
-            <div className="flex flex-col gap-1.5 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 items-center">
+            {/* LEFT: Interactive Feature Cards - Narrower width */}
+            <div className="flex flex-col gap-1.5 relative lg:col-span-2">
               {features.map((feature, idx) => {
                 const Icon = feature.icon;
                 const isActive = activeId === feature.id;
@@ -132,14 +132,14 @@ export const ServiceShowcase: React.FC = () => {
               })}
             </div>
 
-            {/* RIGHT: Sophisticated Dashboard Visual */}
-            <div className="relative group w-full">
+            {/* RIGHT: Sophisticated Dashboard Visual - Larger width */}
+            <div className="relative group w-full lg:col-span-3">
               <div className="absolute -inset-2 bg-white/20 rounded-[1.5rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-1000" />
               
               <div className="relative aspect-[16/10] w-full bg-white/40 rounded-xl overflow-hidden shadow-[0_15px_30px_-8px_rgba(0,0,0,0.1)] border border-white/40 z-10 backdrop-blur-md">
                 {activeImg && (
                   <Image 
-                    key={activeImg.id} // Key ensures React replaces the element for transition
+                    key={activeImg.id} 
                     src={activeImg.imageUrl}
                     alt={activeImg.description}
                     fill
