@@ -29,10 +29,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="max-w-[640px] pointer-events-auto">
           {/* Sub-content block shifted to the very bottom and scaled down */}
           <div className="max-w-[520px]">
-            <h3 className="text-sm md:text-base font-semibold text-gray-800 mb-1">
-              Discover. Collaborate. Create Impact.
-            </h3>
-
             <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed mb-3">
               The all-in-one platform to connect brands with verified influencers and build powerful partnerships.
             </p>
