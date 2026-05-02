@@ -42,37 +42,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
 
             {/* Stats section */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mt-8">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 mt-8">
               {/* Stat 1 */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <Users className="w-5 h-5" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Users className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-black">50K+</p>
-                  <p className="text-xs text-gray-500">Influencers</p>
+                  <p className="text-xs font-bold text-black">50K+</p>
+                  <p className="text-[10px] text-gray-500 leading-none">Influencers</p>
                 </div>
               </div>
 
               {/* Stat 2 */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <Handshake className="w-5 h-5" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Handshake className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-black">10K+</p>
-                  <p className="text-xs text-gray-500">Brand Partners</p>
+                  <p className="text-xs font-bold text-black">10K+</p>
+                  <p className="text-[10px] text-gray-500 leading-none">Brand Partners</p>
                 </div>
               </div>
 
               {/* Stat 3 */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
-                  <CheckCircle className="w-5 h-5" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <CheckCircle className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-black">100%</p>
-                  <p className="text-xs text-gray-500">Verified Profiles</p>
+                  <p className="text-xs font-bold text-black">100%</p>
+                  <p className="text-[10px] text-gray-500 leading-none">Verified Profiles</p>
                 </div>
               </div>
             </div>
