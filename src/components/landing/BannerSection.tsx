@@ -28,7 +28,7 @@ export const BannerSection: React.FC = () => {
           <div className="w-full lg:max-w-[480px] text-center lg:text-left lg:pr-[40px]">
             <div className="space-y-3">
               <h2 className="text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-[-0.5px] text-foreground">
-                Find Creators Your Brand Will Actually <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ffd84d] to-[#f5c400]">Love</span>
+                Find Creators Your Brand Will Actually <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9c7b1a] to-[#5d4037]">Love</span>
               </h2>
               
               <p className="text-[14px] md:text-[15px] leading-[1.6] text-muted-foreground max-w-[420px] mx-auto lg:mx-0">
