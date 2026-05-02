@@ -121,7 +121,7 @@ export const FeatureShowcase: React.FC = () => {
           Everything your creator program needs, from first search to final report.
         </p>
 
-        {/* Tabs Bar - Reduced mt-6 to mt-4 */}
+        {/* Tabs Bar */}
         <div className="mt-4 flex justify-center">
           <div className="inline-flex bg-[#e9e4da] rounded-full p-1.5 gap-1 md:gap-2 flex-wrap justify-center shadow-sm">
             {tabs.map((tab) => (
@@ -141,9 +141,8 @@ export const FeatureShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Creator Slider Section - Reduced mt-12 to mt-6 */}
+        {/* Creator Slider Section */}
         <div className="mt-6 w-full relative group">
-          {/* Slider Container - Reduced py-12 to py-8 */}
           <div 
             ref={sliderRef}
             onMouseDown={handleMouseDown}
@@ -247,18 +246,9 @@ const CreatorCard = ({ creator }: { creator: any }) => {
             <p className="text-[15px] font-bold text-gray-900 tracking-tight">{creator.name}</p>
             <p className="text-[15px] font-bold text-[#0ab99d]">{creator.price}</p>
           </div>
-          <p className="text-[11px] font-medium text-[#888] uppercase tracking-[1px] mb-3">
+          <p className="text-[11px] font-medium text-[#888] uppercase tracking-[1px]">
             {creator.category}
           </p>
-          <div className="flex items-center gap-1.5 pt-3 border-t border-gray-100/50">
-            <div className="flex text-[#f5a623] text-[10px]">
-              {[...Array(5)].map((_, i) => (
-                <span key={i}>★</span>
-              ))}
-            </div>
-            <span className="text-[12px] font-bold text-gray-700">{creator.rating}</span>
-            <span className="text-[11px] text-[#aaa] ml-auto font-medium">48 Deals</span>
-          </div>
         </div>
       </div>
     </div>
