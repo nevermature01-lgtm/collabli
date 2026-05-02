@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Users, Handshake, CheckCircle } from 'lucide-react';
 
 interface HeroSectionProps {
   imageSrc: string;
@@ -39,6 +40,42 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <button className="bg-gradient-to-r from-[#ffd84d] to-[#f5c400] px-6 py-3 rounded-full text-sm font-semibold text-black shadow-sm hover:scale-105 active:scale-95 transition-all duration-200">
               FIND THE RIGHT MATCH →
             </button>
+
+            {/* Stats section */}
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mt-8">
+              {/* Stat 1 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-black">50K+</p>
+                  <p className="text-xs text-gray-500">Influencers</p>
+                </div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <Handshake className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-black">10K+</p>
+                  <p className="text-xs text-gray-500">Brand Partners</p>
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-black">100%</p>
+                  <p className="text-xs text-gray-500">Verified Profiles</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
