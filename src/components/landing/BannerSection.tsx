@@ -8,7 +8,7 @@ import { Star, ArrowRight } from 'lucide-react';
 
 export const BannerSection: React.FC = () => {
   return (
-    <section className="h-auto md:h-[40vh] min-h-[320px] py-[60px] md:py-0 bg-gradient-to-br from-[#f8fafc] to-[#eef2f7] overflow-hidden flex items-center">
+    <section className="h-auto md:h-[40vh] min-h-[320px] py-[60px] md:py-0 bg-[#f4e7b5] overflow-hidden flex items-center">
       <div className="container mx-auto px-5 md:px-4 max-w-[1200px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
