@@ -1,14 +1,13 @@
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AnnouncementBar } from '@/components/landing/AnnouncementBar';
 import { HeroSection } from '@/components/landing/HeroSection';
-import { FeaturesSection } from '@/components/landing/FeaturesSection';
 import { PricingSection } from '@/components/landing/PricingSection';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { AICopyAssistant } from '@/components/landing/AICopyAssistant';
 import { siteConfig } from '@/config/site-content';
 
 export default function Home() {
-  const { announcement, features, pricing, testimonials, global } = siteConfig;
+  const { announcement, pricing, testimonials, global } = siteConfig;
 
   return (
     <MainLayout>
@@ -22,12 +21,6 @@ export default function Home() {
       <HeroSection 
         imageSrc="/desktop-version.png"
         hasAnnouncement={global.showAnnouncementBar}
-      />
-
-      <FeaturesSection 
-        title={features.title}
-        subtitle={features.subtitle}
-        items={features.items}
       />
 
       <AICopyAssistant />
