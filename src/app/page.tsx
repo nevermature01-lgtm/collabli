@@ -18,7 +18,7 @@ export default function Home() {
       />
       
       {/* Independent Floating Logo aligned with Navbar top position */}
-      <div className="fixed top-10 left-4 md:left-10 z-[1000] pointer-events-none flex items-center h-[42px]">
+      <div className="absolute top-10 left-4 md:left-10 z-[1000] pointer-events-none flex items-center h-[42px]">
         <img
           src="/logo.png"
           alt="Collabli Logo"

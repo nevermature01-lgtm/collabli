@@ -36,7 +36,7 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({
   if (!show) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] h-[48px] bg-primary/10 border-b border-primary/20 backdrop-blur-md transition-all duration-300">
+    <div className="absolute top-0 left-0 right-0 z-[100] h-[48px] bg-primary/10 border-b border-primary/20 backdrop-blur-md transition-all duration-300">
       <div className="container mx-auto h-full px-4 flex items-center justify-center relative">
         <p className="text-sm md:text-base font-medium text-primary text-center truncate pr-8">
           {message}

@@ -13,7 +13,7 @@ export default function FloatingNavbar() {
   ];
 
   return (
-    <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[1000] w-auto">
+    <div className="absolute top-10 left-1/2 -translate-x-1/2 z-[1000] w-auto">
       <div className="flex items-center bg-white rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] py-1.5 px-4">
 
         {/* Desktop Menu */}
