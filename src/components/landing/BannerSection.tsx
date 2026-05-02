@@ -12,10 +12,10 @@ export const BannerSection: React.FC = () => {
       <div className="container mx-auto px-5 md:px-4 max-w-[1200px] w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
-          {/* LEFT: SINGLE RANDOM IMAGE */}
+          {/* LEFT: IMAGE */}
           <div className="relative w-full lg:w-1/2 max-w-[500px] aspect-[16/10] rounded-[32px] overflow-hidden shadow-premium transform hover:scale-[1.02] transition-transform duration-500">
             <Image 
-              src="https://picsum.photos/seed/influencer-banner/800/500"
+              src="/banner_img.png"
               alt="Premium Influencer Marketplace"
               fill
               className="object-cover"
