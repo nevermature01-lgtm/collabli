@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Stats section - Independent and aligned left */}
         <div className="max-w-[800px] pointer-events-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 mt-2">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 mt-1">
             {/* Stat 1 */}
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-[#f4e7b5] flex items-center justify-center text-gray-700">
