@@ -7,6 +7,12 @@
       "imageHint": "saas dashboard"
     },
     {
+      "id": "dashboard-preview",
+      "description": "Creator Platform Dashboard Mockup",
+      "imageUrl": "https://picsum.photos/seed/dashboard-preview/1200/800",
+      "imageHint": "dashboard ui"
+    },
+    {
       "id": "feature-automation",
       "description": "Workflow Automation Visualization",
       "imageUrl": "https://picsum.photos/seed/forge2/600/400",

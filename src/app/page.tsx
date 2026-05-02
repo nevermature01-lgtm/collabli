@@ -1,7 +1,9 @@
+
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AnnouncementBar } from '@/components/landing/AnnouncementBar';
 import { HeroSection } from '@/components/landing/HeroSection';
 import { BrandsSlider } from '@/components/landing/BrandsSlider';
+import { FeatureShowcase } from '@/components/landing/FeatureShowcase';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import { siteConfig } from '@/config/site-content';
 
@@ -34,6 +36,8 @@ export default function Home() {
       />
 
       <BrandsSlider />
+
+      <FeatureShowcase />
     </MainLayout>
   );
 }
