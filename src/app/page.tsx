@@ -21,7 +21,7 @@ export default function Home() {
         <img
           src="/logo.png"
           alt="Collabli Logo"
-          className="h-5 md:h-6 lg:h-7 w-auto object-contain select-none"
+          className="h-7 md:h-9 lg:h-10 w-auto object-contain select-none"
         />
       </div>
 
