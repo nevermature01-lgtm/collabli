@@ -2,119 +2,151 @@
 "use client";
 
 import React from 'react';
-import { Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { ArrowRight, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export const Footer: React.FC = () => {
-  const footerLinks = {
-    product: [
-      { name: 'For Brands', href: '#' },
-      { name: 'For Influencers', href: '#' },
-      { name: 'AI Matching', href: '#' },
-      { name: 'Pricing', href: '#' },
-    ],
-    company: [
-      { name: 'About Us', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Contact', href: '#' },
-      { name: 'Newsroom', href: '#' },
-    ],
-    resources: [
-      { name: 'Creator Blog', href: '#' },
-      { name: 'Success Stories', href: '#' },
-      { name: 'Help Center', href: '#' },
-      { name: 'API Docs', href: '#' },
-    ],
-    social: [
-      { name: 'Twitter', icon: Twitter, href: '#' },
-      { name: 'Instagram', icon: Instagram, href: '#' },
-      { name: 'LinkedIn', icon: Linkedin, href: '#' },
-      { name: 'GitHub', icon: Github, href: '#' },
-    ],
-  };
+  const aboutLinks = [
+    { name: 'For Brands', href: '#' },
+    { name: 'For Influencers', href: '#' },
+    { name: 'AI Matching', href: '#' },
+    { name: 'Success Stories', href: '#' },
+  ];
+
+  const infoLinks = [
+    { name: 'Our Story', href: '#' },
+    { name: 'Newsroom', href: '#' },
+    { name: 'Help Center', href: '#' },
+    { name: 'API Documentation', href: '#' },
+  ];
 
   return (
-    <footer className="relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-[linear-gradient(135deg,#020617_0%,#0f172a_50%,#1e293b_100%)] flex flex-col justify-between pt-[60px] pb-[48px] px-6 md:px-[60px]">
-      {/* Subtle Grain Overlay */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+    <footer className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden px-10 py-[100px] md:px-[60px] selection:bg-white/20 selection:text-white">
+      {/* MESH BACKGROUND */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'linear-gradient(135deg, #0f2f2a 0%, #0ab99d 40%, #e6d8a8 100%)',
+          backgroundBlendMode: 'overlay',
+        }}
+      />
+      
+      {/* OVERLAY RADIAL GLOW */}
+      <div 
+        className="absolute inset-0 z-0 opacity-40 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 60%)'
+        }}
+      />
 
-      <div className="max-w-[1200px] mx-auto w-full flex-grow flex flex-col justify-between relative z-10">
+      {/* FLOATING PARTICLES */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {[...Array(12)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute bg-white rounded-full opacity-[0.15] animate-float-slow"
+            style={{
+              width: Math.random() * 4 + 2 + 'px',
+              height: Math.random() * 4 + 2 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+              animationDelay: Math.random() * 5 + 's',
+              animationDuration: Math.random() * 4 + 6 + 's',
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 w-full flex flex-col h-full flex-grow justify-between">
         
-        {/* TOP SECTION: HEADER + SOCIAL HORIZONTAL */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
-          <div className="max-w-[520px]">
-            <h2 className="text-[28px] md:text-[32px] font-bold text-white leading-[1.15] tracking-[-0.5px] mb-3">
-              Build Powerful <br /> Influencer Campaigns
-            </h2>
-            <p className="text-[14px] text-gray-400 leading-[1.6]">
-              The all-in-one platform connecting world-class brands with verified creators to build powerful partnerships.
-            </p>
+        {/* LOGO AREA */}
+        <div className="mb-20">
+          <div className="flex items-center gap-2">
+            <img 
+              src="/logo.png" 
+              alt="Collabli" 
+              className="h-[28px] w-auto brightness-0 invert filter drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+            />
           </div>
+        </div>
 
-          {/* Social Links horizontally aligned top right */}
-          <div className="flex flex-col items-start lg:items-end">
-            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px] lg:text-right">Follow Us</h3>
-            <div className="flex items-center gap-3">
-              {footerLinks.social.map(link => (
+        {/* GRID LAYOUT (CENTER) */}
+        <div className="max-w-[900px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[120px] mb-20">
+          {/* ABOUT COLUMN */}
+          <div className="flex flex-col">
+            <span className="text-[11px] font-bold tracking-[2px] uppercase text-white/60 mb-[30px] block">
+              About
+            </span>
+            <div className="flex flex-col">
+              {aboutLinks.map((link) => (
                 <a 
                   key={link.name} 
-                  href={link.href} 
-                  className="group"
-                  aria-label={link.name}
+                  href={link.href}
+                  className="group flex justify-between items-center py-[14px] border-b border-white/15 text-[22px] font-normal text-white/85 transition-all duration-300 hover:text-white hover:border-white/40"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
-                    <link.icon className="w-4 h-4" />
-                  </div>
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-5 h-5 opacity-50 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* INFO COLUMN */}
+          <div className="flex flex-col">
+            <span className="text-[11px] font-bold tracking-[2px] uppercase text-white/60 mb-[30px] block">
+              Info
+            </span>
+            <div className="flex flex-col">
+              {infoLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  className="group flex justify-between items-center py-[14px] border-b border-white/15 text-[22px] font-normal text-white/85 transition-all duration-300 hover:text-white hover:border-white/40"
+                >
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-5 h-5 opacity-50 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* MIDDLE SECTION: LINKS GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-[36px] mt-[36px] lg:mt-0">
-          <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Product</h3>
-            <ul className="space-y-3">
-              {footerLinks.product.map(link => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[12px] font-medium">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        {/* BOTTOM BAR */}
+        <div className="mt-auto pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4 text-[12px] font-medium text-white/50">
+            <span>© 2026 Collabli</span>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
           </div>
-          <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map(link => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[12px] font-medium">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Resources</h3>
-            <ul className="space-y-3">
-              {footerLinks.resources.map(link => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[12px] font-medium">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+          <div className="flex items-center gap-8 text-[12px] font-bold uppercase tracking-[1px] text-white/50">
+            <a href="#" className="flex items-center gap-2 hover:text-white transition-all group">
+              <Linkedin className="w-4 h-4" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 hover:text-white transition-all group">
+              <Twitter className="w-4 h-4" />
+              <span>X</span>
+            </a>
+            <a href="#" className="flex items-center gap-2 hover:text-white transition-all group">
+              <Instagram className="w-4 h-4" />
+              <span>Instagram</span>
+            </a>
           </div>
         </div>
       </div>
 
-      {/* COPYRIGHT OVERLAY */}
-      <div className="absolute bottom-4 left-12 md:left-20 text-[9px] text-gray-600 font-medium tracking-[2px] uppercase pointer-events-none opacity-40">
-        © 2026 Collabli. All rights reserved.
-      </div>
+      <style jsx global>{`
+        @keyframes float-slow {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(10px, -20px); }
+        }
+        .animate-float-slow {
+          animation: float-slow infinite ease-in-out;
+        }
+      `}</style>
     </footer>
   );
 };
