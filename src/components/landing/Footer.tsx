@@ -91,12 +91,12 @@ export const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="font-bold text-white mb-4 uppercase tracking-[1px] text-[11px]">Social</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.social.map(link => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[12px] font-medium flex items-center gap-3 group">
-                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(255,216,77,0.4)] group-hover:-translate-y-0.5">
-                      <link.icon className="w-3.5 h-3.5" />
+                  <a href={link.href} className="text-gray-500 hover:text-[#ffd84d] transition-colors text-[11px] font-medium flex items-center gap-2.5 group">
+                    <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-[#ffd84d] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(255,216,77,0.3)] group-hover:-translate-y-0.5">
+                      <link.icon className="w-3 h-3" />
                     </div>
                     {link.name}
                   </a>
