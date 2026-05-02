@@ -41,9 +41,9 @@ export default function Home() {
 
       <ServiceShowcase />
 
-      <BannerSection />
-
       <FeatureShowcase />
+
+      <BannerSection />
     </MainLayout>
   );
 }
